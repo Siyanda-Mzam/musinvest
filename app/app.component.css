@@ -15,6 +15,7 @@
 a {
   margin:30px;
   text-decoration: none;
+  color: gray;
 }
 
 #header h1#logo a {
@@ -27,7 +28,7 @@ a {
 }
 
 #header .router-link-active {
-  color: #C83434;
+  color:white;
 }
 
 #header .color {
