@@ -1,8 +1,46 @@
 <h1>
-  {{ title }}
+	{{title}}
 </h1>
 <p>
-  {{ body }}
+    {{body}}
 </p>
-
 <hr>
+<div class="span6">
+    <h1>{{head}}</h1>
+    {{summary}}
+</div>
+<div class="row">
+    <div class="control-group span6">
+        <form accept-charset="UTF-8" action="" class="form-horizontal" method="post" novalidate="novalidate">
+            <div class=" control-group">
+                <div class="control-group">
+                    <label class="control-label" for="user_email">Email</label>
+                    <div class="controls">
+                        <input autofocus="autofocus" name="user[email]" size="50" type="email" value="">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="user_password">Password</label>
+                    <div class="controls">
+                        <input id="user_password" name="user[password]" size="50" type="password">
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                    <label>
+                        {{confMsg}}
+                    </label>
+                </div>
+            </div>
+            <div class="form-actions">
+                <input class="btn btn-primary" name="commit" type="submit" value="Sign Me In">
+            </div>
+            <div class="controls">
+                <label>
+                    <a href="/recover" style="text-decoration:none">Forgot password?</a>
+                </label>
+            </div>
+        </form>
+    </div>
+</div>
