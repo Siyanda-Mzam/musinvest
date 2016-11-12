@@ -3,10 +3,11 @@
     <a [routerLink]="['/']"></a>
   </h1>
 
-  <div id="menu">
-    <a [routerLink]="['/watch-list']">Watch List</a>
-    <a [routerLink]="['/crowd-picks']">Crowd Picks</a>
-    <a [routerLink]="['/discover-talent']">Discover</a>
+  <div id="menu" class="controls">
+    <input type="text" name="search" placeholder="Search Musinvest">
+    <a [routerLink]="['/watch']">Watch List</a>
+    <a [routerLink]="['/picks']">Crowd Picks</a>
+    <a [routerLink]="['/discover']">Discover</a>
   </div>
   <div class="sign">
     <a [routerLink]="['/signin']">Sign In</a>

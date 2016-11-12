@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {Routes, ROUTER_DIRECTIVES} from '@angular/router';
 
 @Component({
     selector: 'signup',
@@ -17,4 +18,20 @@ export class SignupComponent {
     signupSubHeader: string = 'Put your 2 cents in and get a buck back:';
     confMsg: string = 'You will receive an email to confirm your part in\
      this venture :)';
+}
+@Component({
+    selector: 'as-artist',
+    template: require('./as-artist.component.html'),
+    styles: [require('../sign.component.css')]
+})
+export class SignAsArtistComponent {
+
+}
+@Component({
+    selector: 'as-scouter',
+    template: require('./as-scouter.component.html'),
+    styles: [require('../sign.component.css')]
+})
+export class SignAsScouterComponent {
+
 }

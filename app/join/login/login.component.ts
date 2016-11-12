@@ -18,5 +18,8 @@ export class SigninComponent {
     be within your power to experience a crowded, hot, slow, consumer \
     hell-type situation as not only meaningful, but sacred -- on fire \
     with the same force that lit the stars: love, fellowship, the mystical \
-    oneness of all things deep down.";
+    oneness of all things deep down....\
+    This, I submit, is the freedom of a real education, of learning how to \
+    be well-adjusted. You get to consciously decide what has meaning and what \
+    doesn't. You get to decide what to worship. -David Foster";
 }

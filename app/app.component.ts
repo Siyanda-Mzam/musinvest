@@ -5,8 +5,8 @@ import {HomeComponent} from './home/home.component';
 import {WatchListComponent} from './watch-list/watch-list.component';
 import {DiscoverComponent} from './discover/discover.component';
 import {SigninComponent} from './join/login/login.component';
+import {SignupComponent,SignAsArtistComponent, SignAsScouterComponent} from './join/signup/signup.component';
 import {SearchComponent} from './search/search.component';
-import {SignupComponent} from './join/signup/signup.component';
 import {StateService} from './common/state.service';
 
 @Component({
@@ -18,11 +18,13 @@ import {StateService} from './common/state.service';
 @Routes([
   {path: '/',                   component: HomeComponent },
   {path: '/search',             component: SearchComponent},
-  {path: '/watch-list',         component: WatchListComponent},
-  {path: '/crowd-picks',        component: CrowdPicksComponent},
-  {path: '/discover-talent',    component: DiscoverComponent},
+  {path: '/watch',         component: WatchListComponent},
+  {path: '/picks',        component: CrowdPicksComponent},
+  {path: '/discover',    component: DiscoverComponent},
   {path: '/signin',             component: SigninComponent},
   {path: '/signup',             component: SignupComponent},
+  {path: '/signup/as-artist', component: SignAsArtistComponent},
+  {path: '/signup/as-scouter', component: SignAsScouterComponent},
   {path: '/*',                  component: HomeComponent}
 ])
 export class AppComponent {}
