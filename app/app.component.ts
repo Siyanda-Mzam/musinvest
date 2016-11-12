@@ -4,9 +4,9 @@ import {CrowdPicksComponent} from './crowd-picks/crowd-picks.component';
 import {HomeComponent} from './home/home.component';
 import {WatchListComponent} from './watch-list/watch-list.component';
 import {DiscoverComponent} from './discover/discover.component';
-import {SigninComponent} from './login/login.component';
+import {SigninComponent} from './join/login/login.component';
 import {SearchComponent} from './search/search.component';
-import {SignupComponent} from './signup/signup.component';
+import {SignupComponent} from './join/signup/signup.component';
 import {StateService} from './common/state.service';
 
 @Component({

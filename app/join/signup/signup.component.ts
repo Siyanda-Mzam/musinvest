@@ -3,7 +3,7 @@ import {Component} from '@angular/core';
 @Component({
     selector: 'signup',
     template: require('./signup.component.html'),
-    styles: [require('./signup.component.css')]
+    styles: [require('../sign.component.css')]
 })
 export class SignupComponent {
     title: string = 'Let\'s get this career to the next level';
