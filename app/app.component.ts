@@ -12,13 +12,13 @@ import {StateService} from './common/state.service';
 @Component({
   selector: 'app',
   template: require('./app.component.html'),
-  styles: [require('./app.component.css')],
+  styles: [require('./app.component.css'), require('./headers.component.css'), require('./join/sign.component.css')],
   directives: [ ROUTER_DIRECTIVES ]
 })
 @Routes([
   {path: '/',                   component: HomeComponent },
   {path: '/search',             component: SearchComponent},
-  {path: '/watch',         component: WatchListComponent},
+  {path: '/featured',         component: WatchListComponent},
   {path: '/picks',        component: CrowdPicksComponent},
   {path: '/discover',    component: DiscoverComponent},
   {path: '/signin',             component: SigninComponent},

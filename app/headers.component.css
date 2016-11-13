@@ -1,0 +1,19 @@
+h1,
+h2,
+h3,
+h4,
+summary,
+label,
+p{
+    color: #777777 !important;
+}
+.control-sign{
+    display: inline-block;
+}
+
+hr.sleek-line {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #631e1a, #a50a08);
+}

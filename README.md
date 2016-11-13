@@ -1,11 +1,12 @@
 # A Music Investment Platform using Angular 2
-- Musinvest is a free online music investment platform
-- Artists signup and submit their music, whilst scouters signup and listen to the music and invest on the best musician they discover
+Free online music investment platform built to serve as a common ground of reach between musicians and talent seekers. Artists put up their music on the platform for showcasing, and Scouters browse, discover and invest in them.
+
 
 ## Dependencies
 - You need `node` and `npm` installed (via `brew install node` or [NodeJS.org](https://nodejs.org/en/) or whatever);
 - You must also have `typings` installed globally via `npm i -g typings`
 - Be sure that you have `typings` version `1.x`
+
 
 ## Getting Started
 

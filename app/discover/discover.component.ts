@@ -4,7 +4,8 @@ import {StateService} from '../common/state.service';
 
 @Component({
   selector: 'discover',
-  template: require('./discover.component.html')
+  template: require('./discover.component.html'),
+  styles: [require('../headers.component.css')]
 })
 export class DiscoverComponent {
   title: string = 'Discover New Music';

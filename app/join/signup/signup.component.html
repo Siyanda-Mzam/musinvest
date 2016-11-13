@@ -1,48 +1,55 @@
-<h1>
+<div class="container">
+    <h1>
   {{title}}
 </h1>
-<p> {{body}} </p>
-<hr>
-<div>
-    <div class="span6">
-        <h1>Musinvest</h1> {{summary}}
+    <p> {{body}} </p>
+    <hr class="sleek-line">
+    <div class="span5">
+        <h2>{{head}}</h2>
+        <h4>{{summary}}<br>{{join}}</h4>
     </div>
-    <div class="span4">
-        <h3> {{signupSubHeader}} </h3>
-        <form accept-charset="UTF-8" action="" class="form-horizontal" method="post" novalidate="novalidate">
-            <div>
+    <div class="" style="margin-left:47%">
+        <div class="span6">
+            <h4> {{signupSubHeader}} </h4>
+            <form accept-charset="UTF-8" action="" class="form-horizontal" method="post" novalidate="novalidate">
                 <div class="control-group">
-                    <label class="control-label" for="user_email"> <abbr title="required">*</abbr> Email</label>
-                    <div class="controls">
-                        <input autofocus="autofocus" class="" id="user_email" name="user[email]" size="50" type="email" value="">
+                    <div class="control-group">
+                        <label class="control-label" for="user_first_name"> <abbr title="required">*</abbr> First Name</label>
+                        <div class="controls">
+                            <input class="input-xlarge" name="user[first_name]" size="50" type="text">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="user_last_name">Last Name</label>
+                        <div class="controls">
+                            <input class="input-xlarge" id="user_last_name" name="user[last_name]" size="50" type="text">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="user_email"> <abbr title="required">*</abbr> Email</label>
+                        <div class="controls">
+                            <input autofocus="autofocus" class="input-xlarge" id="user_email" name="user[email]" size="50" type="email" placeholder="example@domain.com">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="user_password"> <abbr title="required">*</abbr> Password</label>
+                        <div class="controls">
+                            <input autofocus="autofocus" class="input-xlarge" id="user_password" name="user[email]" size="50" type="password" placeholder="for your new account with us">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <label> {{confMsg}} </label>
+                            <div class="control-sign">
+                                <input class="btn btn-primary" name="commit" type="submit" value="Join Musinvest!">
+                            </div>
+                            <div class="control-sign">
+                                <label> <a style="text-decoration:none" href='/signin'>Or Sign In</a> </label>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="control-group">
-                    <label class="control-label" for="user_first_name">First Name</label>
-                    <div class="controls">
-                        <input name="user[first_name]" size="50" type="text">
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="user_last_name">Last Name</label>
-                    <div class="controls">
-                        <input id="user_last_name" name="user[last_name]" size="50" type="text">
-                    </div>
-                </div>
-            </div>
-            <div class="control-group">
-                <div class="controls">
-                    <label> {{confMsg}} </label>
-                </div>
-            </div>
-            <div class="form-actions">
-                <input class="btn btn-primary" name="commit" type="submit" value="Join Musinvest!">
-            </div>
-            <div class="control-group">
-                <div class="controls">
-                    <label> <a style="text-decoration:none" href='/signin'>Sign in</a> </label>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 </div>
