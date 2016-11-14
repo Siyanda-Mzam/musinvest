@@ -7,7 +7,7 @@ import {Component} from '@angular/core';
 })
 export class SigninComponent {
     title: string = 'Check what you have been missing';
-    body: string = 'Find out who has shown interest in your craft';
+    body: string = 'Find out who has interest in your craft';
     signInSubHeader: string = 'Look at how far you have come :)';
     head: string = 'Remember';
     summary: string = '... everyone was using tiny brushes and doing watercolors,\
