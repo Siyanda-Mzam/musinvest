@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 
 @Component({
     selector: 'watch-list',
-    template: require('./watch-list.component.html'),
+    template: require('./featured.component.html'),
     styles: [require('../headers.component.css')]
 })
 export class WatchListComponent {

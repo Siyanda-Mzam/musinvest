@@ -17,7 +17,7 @@ export class SignupComponent {
     join: string = 'Accelerate the growth of your career with us, today.';
     signupSubHeader: string = 'Put your 2 cents in and get a buck back:';
     confMsg: string = 'You will receive an email to confirm your part in\
-     this venture :)';
+     this venture';
     email: string;
     fname: string;
     lname: string;

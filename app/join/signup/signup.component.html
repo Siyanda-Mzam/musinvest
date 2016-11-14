@@ -1,15 +1,16 @@
+<div class="top stretchRight">
 <div class="container">
     <h1>
   {{title}}
 </h1>
     <p> {{body}} </p>
     <hr class="sleek-line">
-    <div class="span5">
+    <div class="span5 stretchLeft">
         <h2>{{head}}</h2>
         <h4>{{summary}}<br>{{join}}</h4>
     </div>
-    <div class="" style="margin-left:47%">
-        <div class="span6">
+    <div style="margin-left:47%">
+        <div class="span6 stretchLeft">
             <h4> {{signupSubHeader}} </h4>
             <form accept-charset="UTF-8" action="" class="form-horizontal" method="post" novalidate="novalidate">
                 <div class="control-group">
@@ -39,7 +40,7 @@
                     </div>
                     <div class="control-group">
                         <div class="controls">
-                            <label> {{confMsg}} </label>
+                            <p style="color:#e6e8ed"> {{confMsg}} </p>
                             <div class="control-sign">
                                 <input class="btn btn-primary" name="commit" type="submit" value="Join Musinvest!">
                             </div>
@@ -52,4 +53,5 @@
             </form>
         </div>
     </div>
+</div>
 </div>
