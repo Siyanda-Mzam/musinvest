@@ -21,6 +21,11 @@ export class SignupComponent {
     email: string;
     fname: string;
     lname: string;
+    joinUs(e)
+    {
+        e.preventDefeault();
+        console.info("What");
+    }
 }
 @Component({
     selector: 'as-artist',

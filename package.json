@@ -3,10 +3,12 @@
   "version": "0.0.1",
   "license": "SEE LICENSE IN LICENSE",
   "author": "Siyanda Mzam <dot.netntoz@gmail.com>",
-  "contributors": [{
-  "name": "Sizwe Mashele",
-  "email": "sizwe.mash@gmail.com"
-}],
+  "contributors": [
+    {
+      "name": "Sizwe Mashele",
+      "email": "sizwe.mash@gmail.com"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/Siyanda-Mzam/musinvest.git"
@@ -29,6 +31,7 @@
     "zone.js": "^0.6.12"
   },
   "devDependencies": {
+    "@types/node": "^6.0.46",
     "awesome-typescript-loader": "^0.17.0",
     "core-js": "^2.4.0",
     "jasmine-core": "^2.4.1",

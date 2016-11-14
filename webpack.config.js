@@ -27,6 +27,8 @@ module.exports = {
     ]
   },
   devServer: {
+    stats: 'errors-only',
+    stats : {chunks:false},
     historyApiFallback: true
   }
 };

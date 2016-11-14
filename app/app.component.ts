@@ -27,4 +27,6 @@ import {StateService} from './common/state.service';
   {path: '/signup/as-scouter', component: SignAsScouterComponent},
   {path: '/*',                  component: HomeComponent}
 ])
-export class AppComponent {}
+export class AppComponent {
+  
+}

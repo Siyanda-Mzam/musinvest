@@ -1,16 +1,16 @@
-<div class="top stretchRight">
+<div class="top slideLeft">
 <div class="container">
     <h1>
   {{title}}
 </h1>
     <p> {{body}} </p>
     <hr class="sleek-line">
-    <div class="span5 stretchLeft">
+    <div class="span5">
         <h2>{{head}}</h2>
         <h4>{{summary}}<br>{{join}}</h4>
     </div>
     <div style="margin-left:47%">
-        <div class="span6 stretchLeft">
+        <div class="span6">
             <h4> {{signupSubHeader}} </h4>
             <form accept-charset="UTF-8" action="" class="form-horizontal" method="post" novalidate="novalidate">
                 <div class="control-group">
@@ -39,10 +39,19 @@
                         </div>
                     </div>
                     <div class="control-group">
+                        <label class="control-label" for="user_password"> <abbr title="required">*</abbr> I am</label>
+                        <div class="controls">
+                            <select class="input-xlarge" name="roleSelect" ng-model="data.singleSelect">
+                                <option value="scouter">a scouter</option>
+                                <option value="artist">an artist</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group">
                         <div class="controls">
                             <p style="color:#e6e8ed"> {{confMsg}} </p>
                             <div class="control-sign">
-                                <input class="btn btn-primary" name="commit" type="submit" value="Join Musinvest!">
+                                <input (click)="joinUs($e)" class="btn btn-primary" name="commit" type="submit" value="Join Musinvest!">
                             </div>
                             <div class="control-sign">
                                 <label> <a style="text-decoration:none" href='/signin'>Or Sign In</a> </label>
