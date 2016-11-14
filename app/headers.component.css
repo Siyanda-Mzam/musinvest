@@ -518,8 +518,8 @@ expandOpen
 	animation-name: expandOpen;
 	-webkit-animation-name: expandOpen;	
 
-	animation-duration: 1.2s;	
-	-webkit-animation-duration: 1.2s;
+	animation-duration: 1.5s;	
+	-webkit-animation-duration: 1.5ss;
 
 	animation-timing-function: ease-out;	
 	-webkit-animation-timing-function: ease-out;	
@@ -535,10 +535,10 @@ expandOpen
 		transform: scale(0.95);
 	}	
 	80% {
-		transform: scale(1.05);
+		transform: scale(1);
 	}
 	90% {
-		transform: scale(0.98);
+		transform: scale(1);
 	}	
 	100% {
 		transform: scale(1);
@@ -553,10 +553,10 @@ expandOpen
 		-webkit-transform: scale(0.95);
 	}	
 	80% {
-		-webkit-transform: scale(1.05);
+		-webkit-transform: scale(1);
 	}
 	90% {
-		-webkit-transform: scale(0.98);
+		-webkit-transform: scale(1);
 	}	
 	100% {
 		-webkit-transform: scale(1);
