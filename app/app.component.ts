@@ -5,7 +5,7 @@ import {HomeComponent} from './home/home.component';
 import {FeaturedComponent} from './featured/featured.component';
 import {DiscoverComponent} from './discover/discover.component';
 import {SigninComponent} from './join/login/login.component';
-import {SignupComponent,SignAsArtistComponent, SignAsScouterComponent} from './join/signup/signup.component';
+import {SignupComponent, SignAsArtistComponent, SignAsScouterComponent} from './join/signup/signup.component';
 import {SearchComponent} from './search/search.component';
 import {StateService} from './common/state.service';
 

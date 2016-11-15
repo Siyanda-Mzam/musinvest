@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {LoginService} from './login.service';
 
 @Component({
     selector: 'login',
@@ -6,15 +7,20 @@ import {Component} from '@angular/core';
     styles: [
         require('../sign.component.css'),
         require('../../headers.component.css')
-        ]
+        ],
+    providers: [LoginService]
 })
 export class SigninComponent {
-    title = 'Check what you have been missing';
-    body = 'Find out who has interest in your craft';
-    signInSubHeader = 'Look at how far you have come :)';
-    head = 'Remember';
-    summary = '... everyone was using tiny brushes and doing watercolors,\
-    while Jimi Hendrix was painting galactic scenes in Cinemascope.\
-    We are working in a field of mystical resonance, sound and vibration...\
-    that\'s what makes people cry, laugh\ and feel their hair stand up ... ';
+    title: string;
+    body: string;
+    signInSubHeader: string;
+    head: string;
+    summary: string;
+    constructor(loginService: LoginService) {
+        this.title = loginService.getTitle();
+        this.body = loginService.getBody();
+        this.signInSubHeader = loginService.getSignupSubHeader();
+        this.head = loginService.getHead();
+        this.summary = loginService.getSummary();
+    }
 }

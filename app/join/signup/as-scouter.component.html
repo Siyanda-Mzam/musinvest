@@ -1,0 +1,59 @@
+<div class="top slideLeft">
+<div class="container">
+    <h1 class="stretchRight"></h1>
+    <p class="fadeIn"> {{body}} </p>
+    <hr class="sleek-line">
+    <div class="span5 control-group">
+        <h2>{{head}}</h2>
+        <h4>{{summary}}<br>{{join}}</h4>
+    </div>
+
+    <div style="margin-left:47%">
+        <div class="test fadeIn"></div>
+        <div class="span6">
+               <h4> {{signupSubHeader}} </h4>
+            <form accept-charset="UTF-8" action="" class="form-horizontal" method="post" novalidate="novalidate">
+                <div class="control-group">
+                    <div class="control-group">
+                        <label class="control-label" for="label_name">Label Name</label>
+                        <div class="controls">
+                            <input required class="input-xlarge" id="label_name" name="lname" size="50" type="text">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="public_email"> Public Email</label>
+                        <div class="controls">
+                            <input autofocus="autofocus" class="input-xlarge" id="public_email" name="pmail" size="50" type="email" placeholder="example@domain.com">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="official_site">Official Website</label>
+                        <div class="controls">
+                            <input autofocus="autofocus" class="input-xlarge" id="official_site" name="osite" size="50" type="text" placeholder="www.example.com">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="city"> <abbr title="required">*</abbr> City</label>
+                        <div class="controls">
+                            <select  #city (change)="chooseCity(city.value)" class="input-xlarge" name="roleSelect">
+                                <option *ngFor="#province of provinces" [value]="province">{{province}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <p style="color:#e6e8ed"> {{confMsg}} </p>
+                            <div class="control-sign">
+                                <input (click)="joinUs(event)" class="btn btn-primary" name="commit" type="submit" value="Join Musinvest!">
+                            </div>
+                            <div class="control-sign">
+                                <label> <a style="text-decoration:none" href='/signin'>Or Sign In</a> </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
