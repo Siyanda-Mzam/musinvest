@@ -273,6 +273,7 @@ slideRight
 @keyframes slideRight {
 	0% {
 		transform: translateX(-150%);
+		opacity: 0.0;
 	}
 	50%{
 		transform: translateX(0%);

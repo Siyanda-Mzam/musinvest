@@ -1,64 +1,48 @@
-.carousel{
-    overflow:hidden;
-    width:100%;
-}
-.slides{
-    list-style:none;
-    position:relative;
-    width:97%; /* Number of panes * 100% */
-    overflow:hidden; /* Clear floats */
-        /* Slide effect Animations*/
-    -moz-animation:carousel 30s infinite;
-    -webkit-animation:carousel 30s infinite;
-    animation:carousel 30s infinite;
-}
-.slides > li{
-    position:relative;
-    float:left;
-    width:25%; /* 100 / number of panes */
-}
-.carousel img{
-    display: block;
-    width:300px;
-    height:300px;
-    margin: 13px;
-    /*max-width:25%;*/
-}
-.carousel h2{
-    margin-bottom: 0;
-    font-size:1em;
-    padding:1.5em 0.5em 1.5em 0.5em;
-    position:absolute;
-    right:0px;
-    bottom:0px;
-    left:0px;
-    text-align:center;
-    color:#fff;
-  /*  background-color:rgba(0,0,0,0.75);*/
-    text-transform: uppercase;
+div.img {
+    border: 1px solid #ccc;
 }
 
-.test1{
-    background-color: yellow;
+div.img:hover {
+    border: 1px solid #777;
 }
 
-/*@keyframes carousel{
-    0%    { left:-5%; }
-    11%   { left:-5%; }
-    12.5% { left:-105%; }
-    23.5% { left:-105%; }
-    25%   { left:-205%; }
-    36%   { left:-205%; }
-    37.5% { left:-305%; }
-    48.5% { left:-305%; }
-    50%   { left:-405%; }
-    61%   { left:-405%; }
-    62.5% { left:-305%; }
-    73.5% { left:-305%; }
-    75%   { left:-205%; }
-    86%   { left:-205%; }
-    87.5% { left:-105%; }
-    98.5% { left:-105%; }
-    100%  { left:-5%; }
-}*/
+div.img img {
+    width: 100%;
+    height: 400px;
+}
 
+div.desc {
+    padding: 15px;
+    background: #525459;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.responsive {
+    padding: 0 6px;
+    float: left;
+    width: 400px;
+    height: 400px;
+}
+
+@media only screen and (max-width: 700px){
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .responsive {
+        width: 100%;
+    }
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}

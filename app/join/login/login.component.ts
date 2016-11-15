@@ -3,7 +3,10 @@ import {Component} from '@angular/core';
 @Component({
     selector: 'login',
     template: require('./login.component.html'),
-    styles: [require('../sign.component.css'), require('../../headers.component.css')]
+    styles: [
+        require('../sign.component.css'),
+        require('../../headers.component.css')
+        ]
 })
 export class SigninComponent {
     title = 'Check what you have been missing';

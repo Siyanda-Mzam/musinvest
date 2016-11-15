@@ -4,7 +4,9 @@ import {Image} from './tracklist.interface';
 @Component({
   selector: 'css-carousel',
   template: require('./tracklist.component.html'),
-  styles: [require('./tracklist.component.css'), require('../headers.component.css')]
+  styles: [
+    require('./tracklist.component.css'),
+    require('../headers.component.css')]
 })
 export class TrackListComponent {
     //images data to be bound to the template
@@ -24,4 +26,6 @@ var IMAGES = [
   { "title": "Fifty", "url": "../../images/no-romeo-no-juliet.jpg" },
   { "title": "Meek Mill", "url": "../../images/meek-mill.jpg" },
   { "title": "Left Field", "url": "../../images/leftfield-lp.png" },
-  { "title": "Youth", "url": "../../images/youth.jpg" }];
+  { "title": "Youth", "url": "../../images/youth.jpg" },
+  { "title": "Tory", "url": "../../images/tory-lanez.jpg" }
+  ];

@@ -1,12 +1,11 @@
- <div class="carousel fadeIn">
-  <ul class="slides container">
-
-    <li *ngFor="#image of images">
-      <h2 onmouseover="this.style.background='gray'"
-          onmouseout="this.style.background='transparent'">
-          {{image.title}}
-      </h2>
+ <ul class="responsive fadeIn">
+  <div class="img" *ngFor="let image of images" style="margin:10px;display:inline-block">
+    <a target="_blank" href="/player">
       <img src="{{image.url}}" alt="">
-    </li> 
-  </ul>
-</div>
+    </a>
+      <div class="desc" onmouseover="this.style.background='gray'"
+          onmouseout="this.style.background='#525459'">{{image.title}}</div>
+  </div>
+</ul>
+
+<div class="clearfix"></div>
