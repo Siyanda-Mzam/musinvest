@@ -1,9 +1,11 @@
- <div class="carousel expandOpen">
-
-  <ul class="slides">
+ <div class="carousel fadeIn">
+  <ul class="slides container">
 
     <li *ngFor="#image of images">
-     <!-- <h2>{{image.title}}</h2>-->
+      <h2 onmouseover="this.style.background='gray'"
+          onmouseout="this.style.background='transparent'">
+          {{image.title}}
+      </h2>
       <img src="{{image.url}}" alt="">
     </li> 
   </ul>

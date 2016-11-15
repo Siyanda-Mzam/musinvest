@@ -6,6 +6,6 @@ import {Component} from '@angular/core';
     styles: [require('../headers.component.css')]
 })
 export class FeaturedComponent {
-    title: string = 'Featured';
-    body: string = 'Start streaming from a wide variety of tunes';
+    title = 'Featured';
+    body = 'Start streaming from a wide variety of tunes';
 }

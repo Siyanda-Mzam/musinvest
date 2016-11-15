@@ -8,7 +8,7 @@ import {StateService} from '../common/state.service';
   styles: [require('../headers.component.css')]
 })
 export class DiscoverComponent {
-  title: string = 'Discover New Music';
-  body: string = 'Browse through a list of fresh talent now!';
+  title = 'Discover New Music';
+  body = 'Browse through a list of fresh talent now!';
   message: string;
 }

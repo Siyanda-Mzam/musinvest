@@ -6,6 +6,6 @@ import {Component} from '@angular/core';
   styles: [require('../headers.component.css')]
 })
 export class CrowdPicksComponent {
-  title: string = 'Crowd Picks';
-  body:  string = 'Find out who is liked the most by the public';
+  title = 'Crowd Picks';
+  body = 'Find out who is liked the most by the public';
 }

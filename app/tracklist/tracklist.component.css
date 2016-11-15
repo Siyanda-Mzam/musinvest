@@ -38,8 +38,8 @@
     text-transform: uppercase;
 }
 
-ul{
-        
+.test1{
+    background-color: yellow;
 }
 
 /*@keyframes carousel{
@@ -61,3 +61,4 @@ ul{
     98.5% { left:-105%; }
     100%  { left:-5%; }
 }*/
+

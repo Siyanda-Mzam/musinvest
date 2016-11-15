@@ -27,10 +27,18 @@ hr.sleek-line {
 .top {
     background: transparent url(../images/sign.jpg) no-repeat center center;
     background-size:cover;
-	 width: 100% !important;
+	width: 100% !important;
     height: 500px;
     z-index: -999;
     border-radius: 4px;
+}
+#header-wrap {
+    background: #eeeeff;
+    position: fixed;
+    width: 100%;
+    height: 0px;
+    top: 0;
+    z-index: 1;
 }
 
 .test{
@@ -190,8 +198,8 @@ slideLeft
 	animation-name: slideLeft;
 	-webkit-animation-name: slideLeft;	
 
-	animation-duration: 2s;	
-	-webkit-animation-duration: 2s;
+	animation-duration: 1.7s;	
+	-webkit-animation-duration: 1.7s;
 
 	animation-timing-function: ease-in;	
 	-webkit-animation-timing-function: ease-in;		
@@ -202,6 +210,7 @@ slideLeft
 @keyframes slideLeft {
 	0% {
 		transform: translateX(150%);
+		opacity: 0.0;
 	}
 	50%{
 		transform: translateX(0%);

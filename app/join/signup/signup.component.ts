@@ -7,16 +7,16 @@ import {Routes, ROUTER_DIRECTIVES} from '@angular/router';
     styles: [require('../sign.component.css'), require('../../headers.component.css')]
 })
 export class SignupComponent {
-    head: string = 'Musinvest';
-    title: string = 'Let\'s get this career to the next level';
-    body: string = 'It\'s either you step forward into growth or step back into safety';
-    summary: string = 'is a free online platform built to serve\
+    head = 'MuseInvest';
+    title = 'Let\'s get this career to the next level';
+    body = 'It\'s either you step forward into growth or step back into safety';
+    summary = 'is a free online platform built to serve\
     as a common ground of reach between musicians and talent seekers.\
     Artists put up their music on the platform for showcasing,\
     and Scouters browse, discover and invest in them.';
-    join: string = 'Accelerate the growth of your career with us, today.';
-    signupSubHeader: string = 'Put your 2 cents in and get a buck back:';
-    confMsg: string = 'You will receive an email to confirm your part in\
+    join = 'Accelerate the growth of your career with us, today.';
+    signupSubHeader = 'Put your 2 cents in and get a buck back:';
+    confMsg = 'You will receive an email to confirm your part in\
      this venture';
     email: string;
     fname: string;

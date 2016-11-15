@@ -8,6 +8,8 @@ import {TrackListComponent} from '../tracklist/tracklist.component';
   directives: [TrackListComponent]
 })
 export class HomeComponent {
-  title: string = 'Welcome to Musinvest';
-  body:  string = 'An investment platform developed by and for musicians';
+  title = 'Welcome to Muse';
+  middle = 'I';
+  end = 'nvest';
+  body = 'An investment platform developed by and for musicians';
 }
