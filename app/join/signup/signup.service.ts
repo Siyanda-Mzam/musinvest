@@ -13,7 +13,7 @@ export class SignupService {
     signupSubHeader = 'Put your 2 cents in and get a buck back:';
     confMsg = 'You will receive an email to confirm your part in\
      this venture';
-    roles = ['an artist', 'a scouter'];
+    roles = ['I am an artist', 'I am a scouter'];
     getHead() {
         return this.head;
     }

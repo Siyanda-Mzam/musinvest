@@ -28,32 +28,21 @@ div.desc {
     height: 480px;
 }
 
-/* BlackBerry Z30, Galaxy Note 2 and 3, Nexus 5, Nokia N9, Galaxy S5 */
-@media only screen and (max-width: 360px){
-    .responsive {
-        width: 10px;
-    }
-    div.img img {
-        width: 20px !important;
-        height: 300px !important;
-    }
-}
-
-@media only screen and (max-width: 700px){
-    .responsive {
-        width: 49.99999%;
-        margin: 6px 0;
-    }
-}
-
-@media only screen and (max-width: 500px){
-    .responsive {
-        width: 100%;
-    }
-}
-
 /* Nokia Lumia 520, iPhone 4 and 5 */
 @media only screen and (max-width: 320px) {
+ #header {
+  height: 58px;
+  background: rgba(123,0,0,0.9) !important;
+  /*position: fixed;*/
+  top: 100%;
+  header: 0;
+  left: 0;
+  width: 100%;
+}
+}
+
+/* BlackBerry Z30, Galaxy Note 2 and 3, Nexus 5, Nokia N9, Galaxy S5 */
+@media only screen and (max-width: 360px){
 }
 
 /* iPhone 6*/
@@ -80,8 +69,21 @@ div.desc {
 @media only screen and (max-width: 435px) {
 }
 
+@media only screen and (max-width: 500px){
+    .responsive {
+        width: 100%;
+    }
+}
+
 /* Blackberry Playbook, Nexus 7 */
 @media only screen and (max-width: 600px) {
+}
+
+@media only screen and (max-width: 700px){
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
 }
 
 /* iPad, iPad Mini */

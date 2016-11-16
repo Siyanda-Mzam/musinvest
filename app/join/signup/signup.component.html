@@ -11,43 +11,38 @@
             <div class="test fadeIn"></div>
             <div class="span6">
                 <h4> {{signupSubHeader}} </h4>
-                <form #formCtrl="ngForm" accept-charset="UTF-8" class="form-horizontal" method="post" novalidate="novalidate">
+                <form #formCtrl="ngForm" accept-charset="UTF-8" method="post" novalidate="novalidate">
                     <div class="control-group">
                         <div class="control-group">
-                            <label class="control-label" for="user_first_name"> <abbr title="required">*</abbr> First Name</label>
                             <div class="controls">
-                                <input ngControl="firstNameCtrl" required class="input-xlarge" name="user[first_name]" size="50" type="text">
+                                <input ngControl="firstNameCtrl" required class="input-xlarge" name="user[first_name]" size="50" type="text" placeholder="Birth name">
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label" for="user_last_name">Last Name</label>
                             <div class="controls">
-                                <input class="input-xlarge" id="user_last_name" name="user[last_name]" size="50" type="text">
+                                <input class="input-xlarge" id="user_last_name" name="user[last_name]" size="50" type="text" placeholder="Last name">
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label" for="user_email"> <abbr title="required">*</abbr> Email</label>
                             <div class="controls">
                                 <input ngControl="emailCtrl" required autofocus="autofocus" class="input-xlarge" id="user_email" name="user[email]" size="50" type="email" placeholder="example@domain.com">
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label" for="user_password"> <abbr title="required">*</abbr> Password</label>
                             <div class="controls">
                                 <input ngControl="passwordCtrl" required autofocus="autofocus" class="input-xlarge" id="user_password" name="user[email]" size="50" type="password" placeholder="for your new account with us">
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label" for="user_password"> <abbr title="required">*</abbr> I am</label>
                             <div class="controls">
-                                <select #t (change)="asRole(t.value)" class="input-xlarge" name="roleSelect">
+                                <select #t (change)="asRole(t.value)" class="input-select" name="roleSelect">
                                     <option *ngFor="#role of roles" [value]="role">{{role}}</option>
                                 </select>
+                                <p style="color:#e6e8ed !important"> {{confMsg}} </p>
                             </div>
                         </div>
                         <div class="control-group">
                             <div class="controls">
-                                <p style="color:#e6e8ed"> {{confMsg}} </p>
                                 <div class="control-sign">
                                     <input [disabled]="!formCtrl.form.valid" (click)="joinUs(event)" class="btn btn-primary" name="commit" type="submit" value="Continue">
                                 </div>

@@ -14,9 +14,9 @@
 }
 
 a {
-  margin:30px;
-  text-decoration: none;
-  color: gray;
+  margin:15px;
+  text-decoration: none !important;
+  color: gray !important;
 }
 
 #header h1#logo a {
@@ -29,7 +29,7 @@ a {
 }
 
 #header .router-link-active, a:hover{
-  color:white;
+  color:white !important;
 }
 
 #header .color {
@@ -41,7 +41,12 @@ a {
 }
 
 #header #menu {float:left;padding:23px 100px 0 0;}
-#header .sign {float:right;padding:23px 0px 0 0;}
+#header .sign {
+  float:right !important;
+  padding:23px 0px 0 0;
+  position: relative;
+  margin-bottom: 0;
+  }
 
 #container {
   padding:100px 20px 20px 20px;
@@ -65,12 +70,14 @@ a {
 
 /* Nokia Lumia 520, iPhone 4 and 5 */
 @media only screen and (max-width: 320px) {
+  .sign {float:left;padding:3px 0px 0 0;}
+
 }
 
 /* BlackBerry Z30, Galaxy Note 2 and 3, Nexus 5, Nokia N9, Galaxy S5 */
 @media only screen and (max-width: 360px) {
   #container {
-    padding:100px 0px 0px 0px;
+  padding:100px 20px 20px 200px;
   }
 }
 

@@ -7,6 +7,7 @@ export class TrackListService {
     images = [
 	{ "title": "The Rapper", "url": "../../images/fire-rose.jpg" },
 	{ "title": "Future", "url": "../../images/future-pluto.jpg" },
+    { "title": "Tory", "url": "../../images/tory-lanez.jpg" },
 	{ "title": "Purple Reign", "url": "../../images/esco-terrestrial.png" },
 	{ "title": "Hendrix", "url": "../../images/future-magic.jpg" },
     { "title": "Hago", "url": "../../images/future-honest.jpg" },
@@ -16,8 +17,7 @@ export class TrackListService {
     { "title": "Fifty", "url": "../../images/no-romeo-no-juliet.jpg" },
     { "title": "Meek Mill", "url": "../../images/meek-mill.jpg" },
     { "title": "Left Field", "url": "../../images/leftfield-lp.png" },
-    { "title": "Youth", "url": "../../images/youth.jpg" },
-    { "title": "Tory", "url": "../../images/tory-lanez.jpg" }
+    { "title": "Youth", "url": "../../images/youth.jpg" }
   ];
   getImages(){
       return this.images;
