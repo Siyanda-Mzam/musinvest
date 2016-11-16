@@ -7,8 +7,8 @@ div.img:hover {
 }
 
 div.img img {
-    width: 100%;
-    height: 400px;
+    width: 300px;
+    height: 300px;
 }
 
 div.desc {
@@ -24,8 +24,19 @@ div.desc {
 .responsive {
     padding: 0 6px;
     float: left;
-    width: 400px;
-    height: 400px;
+    width: 100%;
+    height: 480px;
+}
+
+/* BlackBerry Z30, Galaxy Note 2 and 3, Nexus 5, Nokia N9, Galaxy S5 */
+@media only screen and (max-width: 360px){
+    .responsive {
+        width: 10px;
+    }
+    div.img img {
+        width: 20px !important;
+        height: 300px !important;
+    }
 }
 
 @media only screen and (max-width: 700px){
@@ -39,6 +50,58 @@ div.desc {
     .responsive {
         width: 100%;
     }
+}
+
+/* Nokia Lumia 520, iPhone 4 and 5 */
+@media only screen and (max-width: 320px) {
+}
+
+/* iPhone 6*/
+@media only screen and (max-width: 375px) {
+}
+
+/* LG Optimus L70, Nexus 4 */
+@media only screen and (max-width: 384px) {
+}
+
+/* Nexus 5X */ 
+@media only screen and (max-width: 411px) {
+}
+
+/* Nexus 6 */
+@media only screen and (max-width: 412px) {
+}
+
+/* iPhone 6 Plus */
+@media only screen and (max-width: 414px) {
+}
+
+/* Nexus 6P */
+@media only screen and (max-width: 435px) {
+}
+
+/* Blackberry Playbook, Nexus 7 */
+@media only screen and (max-width: 600px) {
+}
+
+/* iPad, iPad Mini */
+@media only screen and (max-width: 768px) {
+}
+
+/* Nexus 10 */
+@media only screen and (max-width: 800px) {
+}
+
+/* Laptop with MDPI screen, Laptop with Touch */
+@media only screen and (max-width: 1280px) {
+}
+
+/* Laptop with HiDPI screen*/
+@media only screen and (max-width: 1440px) {
+}
+
+/* Kindle Fire HDX */
+@media only screen and (max-width: 1600px) {
 }
 
 .clearfix:after {

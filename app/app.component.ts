@@ -6,7 +6,7 @@ import {FeaturedComponent} from './featured/featured.component';
 import {DiscoverComponent} from './discover/discover.component';
 import {SigninComponent} from './join/login/login.component';
 import {SignupComponent, SignAsArtistComponent, SignAsScouterComponent} from './join/signup/signup.component';
-import {SearchComponent} from './search/search.component';
+//import {SearchComponent} from './search/search.component';
 import {StateService} from './common/state.service';
 
 @Component({
@@ -17,7 +17,7 @@ import {StateService} from './common/state.service';
 })
 @Routes([
   {path: '/',                   component: HomeComponent },
-  {path: '/search',             component: SearchComponent},
+  //{path: '/search',             component: SearchComponent},
   {path: '/featured',         component: FeaturedComponent},
   {path: '/picks',        component: CrowdPicksComponent},
   {path: '/discover',    component: DiscoverComponent},

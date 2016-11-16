@@ -43,7 +43,10 @@ a {
 #header #menu {float:left;padding:23px 100px 0 0;}
 #header .sign {float:right;padding:23px 0px 0 0;}
 
-#container {padding:100px 20px 20px 20px;}
+#container {
+  padding:100px 20px 20px 20px;
+  
+}
 
 .color {
     border: 0;
@@ -58,4 +61,63 @@ a {
   position: fixed;
   top: 68px;
   width: 100%;
+}
+
+/* Nokia Lumia 520, iPhone 4 and 5 */
+@media only screen and (max-width: 320px) {
+}
+
+/* BlackBerry Z30, Galaxy Note 2 and 3, Nexus 5, Nokia N9, Galaxy S5 */
+@media only screen and (max-width: 360px) {
+  #container {
+    padding:100px 0px 0px 0px;
+  }
+}
+
+/* iPhone 6*/
+@media only screen and (max-width: 375px) {
+}
+
+/* LG Optimus L70, Nexus 4 */
+@media only screen and (max-width: 384px) {
+}
+
+/* Nexus 5X */ 
+@media only screen and (max-width: 411px) {
+}
+
+/* Nexus 6 */
+@media only screen and (max-width: 412px) {
+}
+
+/* iPhone 6 Plus */
+@media only screen and (max-width: 414px) {
+}
+
+/* Nexus 6P */
+@media only screen and (max-width: 435px) {
+}
+
+/* Blackberry Playbook, Nexus 7 */
+@media only screen and (max-width: 600px) {
+}
+
+/* iPad, iPad Mini */
+@media only screen and (max-width: 768px) {
+}
+
+/* Nexus 10 */
+@media only screen and (max-width: 800px) {
+}
+
+/* Laptop with MDPI screen, Laptop with Touch */
+@media only screen and (max-width: 1280px) {
+}
+
+/* Laptop with HiDPI screen*/
+@media only screen and (max-width: 1440px) {
+}
+
+/* Kindle Fire HDX */
+@media only screen and (max-width: 1600px) {
 }
