@@ -12,14 +12,24 @@ Free online music investment platform built to serve as a common ground of reach
 
 
 ```bash
-git clone https://github.com/Siyanda-Mzam/musinvest.git
-cd musinvest
-npm i
+git clone https://github.com/Siyanda-Mzam/museinvest.git
+cd museinvest
+npm i (if it bugs out, try again with sudo)
 typings install
 npm start
 ```
 
-Then navigate your browser to [http://localhost:3001](http://localhost:3001) and use the app.
+Then navigate your browser to [http://localhost:4200](http://localhost:3001) and use the app.
 
-## Testing
+## Unit Testing
 The test setup includes `webpack.test.config.js`, `spec-bundle.js`, and `karma.conf.js`. To run unit tests, execute `npm test` in your terminal.
+
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Before running the tests make sure you are serving the app via `ng serve`.
+
+## Deploying to Github Pages
+
+Run `ng github-pages:deploy` to deploy to Github Pages.

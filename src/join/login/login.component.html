@@ -1,0 +1,54 @@
+<div class="top slideRight">
+  <div class="container">
+      <h1 class="slideRight">
+	        {{title}}
+        </h1>
+      <p class="fadeIn">
+        {{body}}
+      </p>
+      <hr class="sleek-line">
+      <div class="span5 control-group">
+        <div class="span5">
+          <h2>{{head}}</h2>
+          <h4>{{summary}}</h4>
+        </div>
+      </div>
+      <div style="margin-left:47%">
+        <div class="test fadeIn"></div>
+        <div class="span6">
+          <div style="padding-top:10px">
+            <h4> {{signInSubHeader}} </h4>
+            <form accept-charset="UTF-8" class="form-horizontal" method="post" novalidate="novalidate">
+              <div class="control-group">
+                <div class="control-group">
+                  <label class="control-label" for="user_email">Email</label>
+                  <div class="controls">
+                    <input class="input-xlarge" autofocus="autofocus" name="user[email]" size="50" type="email" value="" placeholder="example@domain.com">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="user_password">Password</label>
+                  <div class="controls">
+                    <input class="input-xlarge" id="user_password" name="user[password]" size="50" type="password">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <div class="controls">
+                    <div class="control-sign">
+                      <input class="btn btn-primary" name="commit" type="submit" value="Sign Me In">
+                    </div>
+                    <div class="control-sign">
+                      <label> <a style="text-decoration:none" href='recover'>Forgot Password?</a> </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="controls">
+                  <label> <a style="text-decoration:none;margin-top:5px" href='signup'>New here? Join us!</a> </label>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

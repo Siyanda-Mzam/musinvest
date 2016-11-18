@@ -1,0 +1,129 @@
+#header {
+  height: 58px;
+  background: rgba(0,0,0,0.9);
+  /*position: fixed;*/
+  top: 100%;
+  left: 0;
+  width: 100%;
+}
+
+#header h1#logo {
+  float: left;
+  margin: 0 auto;
+}
+
+a {
+  margin:15px;
+  text-decoration: none !important;
+  color: gray !important;
+}
+
+#header h1#logo a {
+  background: url(../images/logo.png) no-repeat top left;
+  width: 194px;
+  height: 50px;
+  margin: 8px;
+  display: inline-block;
+  text-indent: -9999px;
+}
+
+#header .router-link-active, a:hover{
+  color:white !important;
+}
+
+#header .color {
+  display:flex;
+  height: 3px;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+}
+
+#header #menu {float:left;padding:23px 100px 0 0;}
+#header .sign {
+  float:right !important;
+  padding:20px 40px 0 0;
+  position: relative;
+  margin-bottom: 0;
+  top: 0;
+  }
+
+#container {
+  padding:100px 20px 20px 20px;
+  
+}
+
+.color {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #a50a08, #333, #848181);
+}
+
+.shadow {
+  height: 35px;
+  position: fixed;
+  top: 68px;
+  width: 100%;
+}
+
+/* Nokia Lumia 520, iPhone 4 and 5 */
+@media only screen and (min-width: 320px) {
+
+
+}
+
+/* BlackBerry Z30, Galaxy Note 2 and 3, Nexus 5, Nokia N9, Galaxy S5 */
+@media only screen and (max-width: 360px) {
+  #container {
+  padding:100px 20px 20px 200px;
+  }
+}
+
+/* iPhone 6*/
+@media only screen and (max-width: 375px) {
+}
+
+/* LG Optimus L70, Nexus 4 */
+@media only screen and (max-width: 384px) {
+}
+
+/* Nexus 5X */ 
+@media only screen and (max-width: 411px) {
+}
+
+/* Nexus 6 */
+@media only screen and (max-width: 412px) {
+}
+
+/* iPhone 6 Plus */
+@media only screen and (max-width: 414px) {
+}
+
+/* Nexus 6P */
+@media only screen and (max-width: 435px) {
+}
+
+/* Blackberry Playbook, Nexus 7 */
+@media only screen and (max-width: 600px) {
+}
+
+/* iPad, iPad Mini */
+@media only screen and (max-width: 768px) {
+}
+
+/* Nexus 10 */
+@media only screen and (max-width: 800px) {
+}
+
+/* Laptop with MDPI screen, Laptop with Touch */
+@media only screen and (max-width: 1280px) {
+}
+
+/* Laptop with HiDPI screen*/
+@media only screen and (max-width: 1440px) {
+}
+
+/* Kindle Fire HDX */
+@media only screen and (max-width: 1600px) {
+}

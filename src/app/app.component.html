@@ -1,0 +1,19 @@
+
+<header id="header">
+    <h1 id="logo">
+    <a routerLink="/"></a>
+  </h1>
+
+    <div id="menu" class="control-group">
+       <a [routerLink]="['/featured']">Featured</a>
+        <a [routerLink]="['/picks']">Crowd Picks</a>
+        <a [routerLink]="['/discover']">Discover</a>
+    </div>
+   <!-- <input class="search-query navbar-search in" type="text" name="search" size="50" placeholder="Search Musinvest">-->
+    <div class="sign">
+        <a [routerLink]="['/signin']">{{signin}}</a>
+        <a [routerLink]="['/signup']">{{signup}}</a>
+    </div>
+</header>
+    <div class="color"></div>
+<router-outlet></router-outlet>
