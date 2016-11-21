@@ -11,8 +11,8 @@ import { PageInfoService } from './page-info-service';
 export class SignupComponent {
     head: string; title: string; body: string; summary: string; join: string;
     signupSubHeader: string; confMsg: string; roles: string[]; email: string;
-    fname: string; lname: string; role:string;
-    constructor(signupService: SignupService) {
+    fname: string; lname: string; role:string; object: any;
+    constructor(private signupService: SignupService) {
         this.head = signupService.head;
         this.body = signupService.body;
         this.title = signupService.title;
@@ -24,53 +24,66 @@ export class SignupComponent {
         this.role = this.roles[0];
     }
     asRole(value){
-        this.role = value;
-        alert(value);
+        return this.role = value;
     }
-    joinUs(event)
-    {
-        //event.preventDefault();
-     //   alert(event.fname);
-        console.log(event.email.value);
-        console.log(event.fname.value);
+    joinUs(event) {
+        event.preventDefault();
         console.log(event.pword.value);
-        /*if (this.role == this.roles[1])
-         location.href = '/signup/as-scouter';
+        if (this.role == this.roles[1])
+            this.object = new Scouter(event.fname.value, event.lname.value, event.email.value, event.pword.value);
         else if (this.role == this.roles[0])
-            location.href = '/signup/as-artist';
-        else
-            location.href = '/';*/
+            this.object = new Artist(event.fname.value, event.lname.value, event.email.value, event.pword.value);
+         //  this.role == this.roles[1] ? location.href = '/signup/as-scouter' : location.href = '/signup/as-artist';
     }
 }
+
+export class Person {
+    name: string;
+    surname: string;
+    email: string;
+    password: string;
+    constructor(name:string, surname:string, email:string, password:string) {
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.password = password;
+    }
+}
+
+
 @Component({
     selector: 'as-artist',
     templateUrl: './as-artist.component.html',
     styleUrls: ['../sign.component.css', '../../headers.component.css'],
     providers: [AsArtistService, LocationService]
 })
-export class SignAsArtistComponent {
+export class Artist extends Person {
     alias: string;
     origin: string;
     contact: number;
+    constructor(name:string, surname:string, email:string, password:string) {
+        super(name, surname, email, password);
+    }
+    chooseCity(value) {
+        this.origin = value;
+    }
 }
+
+
 @Component({
     selector: 'as-scouter',
     templateUrl: './as-scouter.component.html',
     styleUrls: ['../sign.component.css', '../../headers.component.css'],
     providers: [AsScouterService, LocationService]
 })
-export class SignAsScouterComponent {
+export class Scouter extends Person {
     label: string;
     regNo: string;
     city: string;
     provinces: string[];
     publicEmail: string;
     website: string;
-    constructor(locationService: LocationService) {
-        this.provinces = locationService.getProvinces();
-        alert("Successfully injected the Location Service");
-    }
-    chooseCity(value) {
-        alert("Called");
+    constructor(name:string, surname:string, email:string, password:string) {
+        super(name, surname, email, password);
     }
 }

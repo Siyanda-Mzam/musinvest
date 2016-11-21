@@ -6,7 +6,7 @@ import { HomeComponent } from '../home/home.component';
 import { FeaturedComponent } from '../featured/featured.component';
 import { DiscoverComponent } from '../discover/discover.component';
 import { SigninComponent } from '../join/login/login.component';
-import { SignupComponent, SignAsArtistComponent, SignAsScouterComponent } from '../join/signup/signup.component';
+import { SignupComponent, Artist, Scouter } from '../join/signup/signup.component';
 
 const PresetRoutes: Routes = [
     { path: '',                    component: HomeComponent },
@@ -15,8 +15,8 @@ const PresetRoutes: Routes = [
     { path: 'discover',           component: DiscoverComponent },
     { path: 'signin',             component: SigninComponent },
     { path: 'signup',             component: SignupComponent },
-    { path: 'signup/as-artist',   component: SignAsArtistComponent },
-    { path: 'signup/as-scouter',  component: SignAsScouterComponent },
+    { path: 'signup/as-artist',   component: Artist },
+    { path: 'signup/as-scouter',  component: Scouter },
     { path: '*',                  component: HomeComponent }
 ];
 
