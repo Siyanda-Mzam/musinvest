@@ -11,6 +11,7 @@ import { FeaturedComponent } from '../featured/featured.component';
 import { CrowdPicksComponent } from '../crowd-picks/crowd-picks.component';
 import { DiscoverComponent } from '../discover/discover.component';
 import { SigninComponent } from '../join/login/login.component';
+import { TrackListComponent } from '../tracklist/tracklist.component';
 import { SignupComponent, SignAsArtistComponent, SignAsScouterComponent } from '../join/signup/signup.component';
 
 @NgModule({
@@ -29,6 +30,7 @@ import { SignupComponent, SignAsArtistComponent, SignAsScouterComponent } from '
     CrowdPicksComponent,
     DiscoverComponent,
     SigninComponent,
+    TrackListComponent,
     SignAsArtistComponent, SignAsScouterComponent, SignupComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

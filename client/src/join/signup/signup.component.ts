@@ -1,38 +1,45 @@
 import { Component } from '@angular/core';
 import { SignupService, AsScouterService, AsArtistService, LocationService } from './signup.service';
+import { PageInfoService } from './page-info-service';
 
 @Component({
     selector: 'signup',
     templateUrl: './signup.component.html',
     styleUrls: ['../sign.component.css', '../../headers.component.css'],
-    providers: [SignupService]
+    providers: [SignupService, PageInfoService]
 })
 export class SignupComponent {
     head: string; title: string; body: string; summary: string; join: string;
     signupSubHeader: string; confMsg: string; roles: string[]; email: string;
     fname: string; lname: string; role:string;
     constructor(signupService: SignupService) {
-        this.head = signupService.getHead();
-        this.body = signupService.getBody();
-        this.title = signupService.getTitle();
-        this.summary = signupService.getSummary();
-        this.join = signupService.getJoin();
-        this.signupSubHeader = signupService.getSignupSubHeader();
-        this.confMsg = signupService.getConfMsg();
-        this.roles = signupService.getRoles();
-        this.role = 'I am an artist';
+        this.head = signupService.head;
+        this.body = signupService.body;
+        this.title = signupService.title;
+        this.summary = signupService.summary;
+        this.join = signupService.join;
+        this.signupSubHeader = signupService.signupSubHeader;
+        this.confMsg = signupService.confMsg;
+        this.roles = signupService.roles;
+        this.role = this.roles[0];
     }
-    private asRole(value){
+    asRole(value){
         this.role = value;
+        alert(value);
     }
-    private joinUs()
+    joinUs(event)
     {
-        if (this.role == 'I am a scouter')
+        //event.preventDefault();
+     //   alert(event.fname);
+        console.log(event.email.value);
+        console.log(event.fname.value);
+        console.log(event.pword.value);
+        /*if (this.role == this.roles[1])
          location.href = '/signup/as-scouter';
-        else if (this.role == 'I am an artist')
+        else if (this.role == this.roles[0])
             location.href = '/signup/as-artist';
         else
-            location.href = '/';
+            location.href = '/';*/
     }
 }
 @Component({
@@ -61,7 +68,7 @@ export class SignAsScouterComponent {
     website: string;
     constructor(locationService: LocationService) {
         this.provinces = locationService.getProvinces();
-        alert("MAde");
+        alert("Successfully injected the Location Service");
     }
     chooseCity(value) {
         alert("Called");

@@ -11,26 +11,26 @@
             <div class="test fadeIn"></div>
             <div class="span6">
                 <h4> {{signupSubHeader}} </h4>
-                <form #formCtrl="ngForm" accept-charset="UTF-8" method="post" novalidate="novalidate">
+                <form #formCtrl="ngForm" #event (submit)="joinUs(event)" accept-charset="UTF-8" method="post" novalidate="novalidate">
                     <div class="control-group">
                         <div class="control-group">
                             <div class="controls">
-                                <input ngControl="firstNameCtrl" required class="input-xlarge" name="user[first_name]" size="50" type="text" placeholder="Birth name">
+                                <input ngControl="firstNameCtrl" required class="input-xlarge" [(ngModel)]="fname" name="fname" size="50" type="text" placeholder="Birth name">
                             </div>
                         </div>
                         <div class="control-group">
                             <div class="controls">
-                                <input class="input-xlarge" id="user_last_name" name="user[last_name]" size="50" type="text" placeholder="Last name">
+                                <input class="input-xlarge" id="user_last_name" [(ngModel)]="lname" name="lname" size="50" type="text" placeholder="Last name">
                             </div>
                         </div>
                         <div class="control-group">
                             <div class="controls">
-                                <input ngControl="emailCtrl" required autofocus="autofocus" class="input-xlarge" id="user_email" name="user[email]" size="50" type="email" placeholder="example@domain.com">
+                                <input ngControl="emailCtrl" required autofocus="autofocus" class="input-xlarge" [(ngModel)]="email" name="email" size="50" type="email" placeholder="example@domain.com">
                             </div>
                         </div>
                         <div class="control-group">
                             <div class="controls">
-                                <input ngControl="passwordCtrl" required autofocus="autofocus" class="input-xlarge" id="user_password" name="user[email]" size="50" type="password" placeholder="for your new account with us">
+                                <input ngControl="passwordCtrl" required autofocus="autofocus" class="input-xlarge" id="user_password" [(ngModel)]="pword" name="pword" size="50" type="password" placeholder="for your new account with us">
                             </div>
                         </div>
                         <div class="control-group">
@@ -44,7 +44,7 @@
                         <div class="control-group">
                             <div class="controls">
                                 <div class="control-sign">
-                                    <input [disabled]="!formCtrl.form.valid" (click)="joinUs(event)" class="btn btn-primary" name="commit" type="submit" value="Continue">
+                                    <input [disabled]="!formCtrl.form.valid" class="btn btn-primary" name="commit" type="submit" value="Continue">
                                 </div>
                                 <div class="control-sign">
                                     <label> <a style="text-decoration:none" href='/signin'>Or Sign In</a> </label>

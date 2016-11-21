@@ -5,12 +5,12 @@ import {TrackListService} from './tracklist.service';
 @Component({
   selector: 'track-list',
   templateUrl: './tracklist.component.html',
-  styleUrls: ['./tracklist.component.css', '../headers.component.css'],
+  styleUrls: ['./tracklist.component.css'],
   providers: [TrackListService]
 })
 export class TrackListComponent {
 	public images;
-  constructor(trackListService: TrackListService) {
+  constructor(private trackListService: TrackListService) {
       this.images = trackListService.getImages();
     }
 }
