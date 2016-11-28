@@ -1,7 +1,7 @@
 var express = require("express");
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
-var User = require('./models/users.js');
+var User = require('../models/user.js');
 var db = mongoose.connect('mongodb://localhost:27017/scoutz');
 var router = express.Router();
 mongoose.Promise = global.Promise;
@@ -10,7 +10,7 @@ mongoose.Promise = global.Promise;
 
 router.post('/signup', function(req, res) {
 	console.log("We're signing up");
-	if ((!req.body.alias && (req.body.label || req.body.city))||
+/*	if ((!req.body.alias && (req.body.label || req.body.city))||
 		(req.body.alias && (!req.body.label || !req.body.city))) {
 		var hash = hashPassword(req.body.password);
 		var newUser = new User({
@@ -42,7 +42,7 @@ router.post('/signup', function(req, res) {
 	else
 	{
 		alert("You have not decided if you are a scouter or artist. What the fuck?")
-	}
+	}*/
 });
 
 router.post('/signin', function(req, res) {

@@ -8,7 +8,7 @@
             <h4>{{summary}}<br>{{join}}</h4>
         </div>
         <div style="margin-left:47%">
-            <div class="test fadeIn"></div>
+            <div class="vert-line fadeIn"></div>
             <div class="span6">
                 <h4> {{signupSubHeader}} </h4>
                 <form #formCtrl="ngForm" #event (submit)="joinUs(event)" accept-charset="UTF-8" method="post" novalidate="novalidate">
@@ -25,12 +25,12 @@
                         </div>
                         <div class="control-group">
                             <div class="controls">
-                                <input ngControl="emailCtrl" required autofocus="autofocus" class="input-xlarge" [(ngModel)]="email" name="email" size="50" type="email" placeholder="example@domain.com">
+                                <input ngControl="emailCtrl" required class="input-xlarge" [(ngModel)]="email" name="email" size="50" type="email" placeholder="example@domain.com">
                             </div>
                         </div>
                         <div class="control-group">
                             <div class="controls">
-                                <input ngControl="passwordCtrl" required autofocus="autofocus" class="input-xlarge" id="user_password" [(ngModel)]="pword" name="pword" size="50" type="password" placeholder="for your new account with us">
+                                <input ngControl="passwordCtrl" required class="input-xlarge" id="user_password" [(ngModel)]="pword" name="pword" size="50" type="password" placeholder="for your new account with us">
                             </div>
                         </div>
                         <div class="control-group">

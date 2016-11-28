@@ -31,7 +31,7 @@ hr.sleek-line {
 	width: 100% !important;
     height: 500px;
     z-index: -999;
-    border-radius: 4px;
+	margin-top: 30px; 
 }
 #header-wrap {
     background: #eeeeff;
@@ -42,7 +42,7 @@ hr.sleek-line {
     z-index: 0;
 }
 
-.test{
+.vert-line{
 	height:300px;
 	width:0.7px;
 	position:fixed;

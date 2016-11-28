@@ -1,19 +1,15 @@
-
+<div class="header-wrapper">
 <header id="header">
-    <h1 id="logo">
-    <a routerLink="/"></a>
-  </h1>
-
-    <div id="menu" class="control-group">
-       <a [routerLink]="['/featured']">Featured</a>
-        <a [routerLink]="['/picks']">Crowd Picks</a>
-        <a [routerLink]="['/discover']">Discover</a>
-    </div>
+    <h1 id="logo"><a routerLink="/"></a></h1>
+        <div id="menu" class="control-group">
+            <a [routerLink]="['/featured']">Featured</a>
+            <a [routerLink]="['/picks']">Crowd Picks</a>
+            <a [routerLink]="['/discover']">Discover</a>
    <!-- <input class="search-query navbar-search in" type="text" name="search" size="50" placeholder="Search Musinvest">-->
-    <div class="sign">
-        <a [routerLink]="['/signin']">{{signin}}</a>
-        <a [routerLink]="['/signup']">{{signup}}</a>
-    </div>
+            <a [routerLink]="['/signin']">Sign In</a>
+            <a [routerLink]="['/signup']">Join us, It's FREE</a>
+        </div>
 </header>
-    <div class="color"></div>
+<div class="color"></div>
 <router-outlet></router-outlet>
+</div>

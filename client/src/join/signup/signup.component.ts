@@ -27,26 +27,27 @@ export class SignupComponent {
         return this.role = value;
     }
     joinUs(event) {
-        event.preventDefault();
-        console.log(event.pword.value);
         if (this.role == this.roles[1])
-            this.object = new Scouter(event.fname.value, event.lname.value, event.email.value, event.pword.value);
+            this.object = new Scouter(event.fname.value, event.lname.value, event.email.value, event.pword.value, this.role);
         else if (this.role == this.roles[0])
-            this.object = new Artist(event.fname.value, event.lname.value, event.email.value, event.pword.value);
+            this.object = new Artist(event.fname.value, event.lname.value, event.email.value, event.pword.value, this.role);
+        console.log("Here we log again " + JSON.stringify(this.signupService.addMember(this.object)));
          //  this.role == this.roles[1] ? location.href = '/signup/as-scouter' : location.href = '/signup/as-artist';
     }
 }
 
-export class Person {
+abstract class Person {
     name: string;
     surname: string;
     email: string;
     password: string;
-    constructor(name:string, surname:string, email:string, password:string) {
+    role: string;
+    constructor(name:string, surname:string, email:string, password:string, role:string) {
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.password = password;
+        role ? this.role = role : this.role = null;
     }
 }
 
@@ -61,8 +62,8 @@ export class Artist extends Person {
     alias: string;
     origin: string;
     contact: number;
-    constructor(name:string, surname:string, email:string, password:string) {
-        super(name, surname, email, password);
+    constructor(name:string, surname:string, email:string, password:string, role:string) {
+        super(name, surname, email, password, role);
     }
     chooseCity(value) {
         this.origin = value;
@@ -83,7 +84,7 @@ export class Scouter extends Person {
     provinces: string[];
     publicEmail: string;
     website: string;
-    constructor(name:string, surname:string, email:string, password:string) {
-        super(name, surname, email, password);
+    constructor(name:string, surname:string, email:string, password:string, role:string) {
+        super(name, surname, email, password, role);
     }
 }
