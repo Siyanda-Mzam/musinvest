@@ -19,11 +19,14 @@ export class SignupService {
     }
     addMember(object: any) {
         var headers = new Headers();
-        headers.append('Content-Type', 'application/json');
-        headers.append('Access-Control-Allow', '*');
-        console.log("About to send an http request with " + JSON.stringify(object));
-        return this.http.post('http://localhost:3000/signup/', JSON.stringify(object), {headers: headers})
-            .map(res => res.json(), function(err, res){
+        var body = JSON.stringify("&name=" + object.name + "&surname=" + object.surname +
+        "&email=" + object.email + "&password=" + object.password + "&role=" + object.role);
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        headers.append('Accept', 'application/json');
+        headers.append('Access-Control-Allow-Origin', '*');
+        console.log("About to make an http request " + body);
+        return this.http.post('http://localhost:3000/signup', body, {headers: headers})
+            .map(res => res.json(), function(err){
                 if (err)
                     console.log("There was an error: " + err);
                 else

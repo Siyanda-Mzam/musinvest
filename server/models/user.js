@@ -10,6 +10,7 @@ var userSchema = new Schema({
   lastname      : {	type: String, trim: true},
   email         : { type: String, required: true, unique: true, trim: true},
   password      : { type: String, required: true},
+  role          : { type: String, required: true, trim: true},
   alias         : { type: String, required: false, trim: true},
   location      : { type: String, required: false},
   label         : { type: String, required: false, trim: true},

@@ -27,16 +27,22 @@ export class SignupComponent {
         return this.role = value;
     }
     joinUs(event) {
-        if (this.role == this.roles[1])
-            this.object = new Scouter(event.fname.value, event.lname.value, event.email.value, event.pword.value, this.role);
-        else if (this.role == this.roles[0])
-            this.object = new Artist(event.fname.value, event.lname.value, event.email.value, event.pword.value, this.role);
-        console.log("Here we log again " + JSON.stringify(this.signupService.addMember(this.object)));
-         //  this.role == this.roles[1] ? location.href = '/signup/as-scouter' : location.href = '/signup/as-artist';
+        console.log("NO new friends. Roles: " + this.roles + " Roles: "  + this.role);
+        if (this.role == this.roles[1]) {
+            this.object = new Scouter(event.fname.value, event.lname.value,
+            event.email.value, event.pword.value, this.role);
+        }
+        else if (this.role == this.roles[0]) {
+            this.object = new Artist(event.fname.value, event.lname.value,
+            event.email.value, event.pword.value, this.role);
+        }
+        else
+            console.log("Motherfucker"); //  this.role == this.roles[1] ? location.href = '/signup/as-scouter' : location.href = '/signup/as-artist';
+        this.signupService.addMember(this.object).subscribe();
     }
 }
 
-abstract class Person {
+export abstract class Person {
     name: string;
     surname: string;
     email: string;
@@ -48,6 +54,7 @@ abstract class Person {
         this.email = email;
         this.password = password;
         role ? this.role = role : this.role = null;
+        console.log("Inside the super class: Person");
     }
 }
 
@@ -63,7 +70,9 @@ export class Artist extends Person {
     origin: string;
     contact: number;
     constructor(name:string, surname:string, email:string, password:string, role:string) {
+        console.log("In artist constructor before super call");
         super(name, surname, email, password, role);
+        console.log("After super call");
     }
     chooseCity(value) {
         this.origin = value;

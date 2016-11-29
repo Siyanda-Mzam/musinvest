@@ -4,21 +4,29 @@ var mongoose = require('mongoose');
 var User = require('../models/user.js');
 var db = mongoose.connect('mongodb://localhost:27017/scoutz');
 var router = express.Router();
+var crypto = require('crypto');
+db = mongoose.connection;
 mongoose.Promise = global.Promise;
-
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log('Connected to MongoDB');
+});
 
 
 router.post('/signup', function(req, res) {
-	console.log("We're signing up");
-/*	if ((!req.body.alias && (req.body.label || req.body.city))||
-		(req.body.alias && (!req.body.label || !req.body.city))) {
+	console.log("We're signing up ");
+	if (req.body.name && req.body.surname &&
+	req.body.password && req.body.email) {
+		console.log(req.body);
+		var role = JSON.stringify(req.body.role);
 		var hash = hashPassword(req.body.password);
 		var newUser = new User({
-			firstname: req.body.firstname,
-			lastname: req.body.lastname,
+			firstname: req.body.name,
+			lastname: req.body.surname,
 			email: req.body.email,
 			password: hash.pwd,
 			salt: hash.salt,
+			role: role.slice(role.lastIndexOf(' ')).trim(),
 			alias: req.body.alias ? req.body.alias : "",
 			location: req.body.location ? req.body.location : "",
 			label: req.body.label ? req.body.label : "",
@@ -37,15 +45,16 @@ router.post('/signup', function(req, res) {
 				res.status(200);
 			}
 		});
-		res.redirect('/');
+		res.redirect('../../client/home/home.component.html');
 	}
 	else
 	{
-		alert("You have not decided if you are a scouter or artist. What the fuck?")
-	}*/
+		console.log("You have not decided if you are a scouter or artist. What the fuck?")
+	}
 });
 
 router.post('/signin', function(req, res) {
+	console.log("In the login route");
 	User.findOne({
 		email: req.body.email,
 		password: req.body.password

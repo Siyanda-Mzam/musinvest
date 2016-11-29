@@ -1,11 +1,11 @@
-import {Component} from '@angular/core';
-import {LoginService} from './login.service';
+import { Component } from '@angular/core';
+import { LoginService } from './login.service';
 
 @Component({
     selector: 'login',
     templateUrl: './login.component.html',
-    styleUrls: ['../sign.component.css', '../../headers.component.css'],
-    providers: [LoginService]
+    styleUrls: [ '../sign.component.css', '../../headers.component.css' ],
+    providers: [ LoginService ]
 })
 export class SigninComponent {
     title: string;
@@ -13,11 +13,15 @@ export class SigninComponent {
     signInSubHeader: string;
     head: string;
     summary: string;
-    constructor(loginService: LoginService) {
+    constructor(private loginService: LoginService) {
         this.title = loginService.getTitle();
         this.body = loginService.getBody();
         this.signInSubHeader = loginService.getSignupSubHeader();
         this.head = loginService.getHead();
         this.summary = loginService.getSummary();
+    }
+    signIn(event) {
+        if (event.email.value && event.password.value)
+            return this.loginService.login(event);
     }
 }
