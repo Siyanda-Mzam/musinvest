@@ -5,8 +5,8 @@ import { PageInfoService } from './page-info-service';
 @Component({
     selector: 'signup',
     templateUrl: './signup.component.html',
-    styleUrls: ['../sign.component.css', '../../headers.component.css'],
-    providers: [SignupService, PageInfoService]
+    styleUrls: [ '../sign.component.css', '../../headers.component.css' ],
+    providers: [ SignupService, PageInfoService ]
 })
 export class SignupComponent {
     head: string; title: string; body: string; summary: string; join: string;
@@ -23,11 +23,10 @@ export class SignupComponent {
         this.roles = signupService.roles;
         this.role = this.roles[0];
     }
-    asRole(value){
+    asRole(value) {
         return this.role = value;
     }
     joinUs(event) {
-        console.log("NO new friends. Roles: " + this.roles + " Roles: "  + this.role);
         if (this.role == this.roles[1]) {
             this.object = new Scouter(event.fname.value, event.lname.value,
             event.email.value, event.pword.value, this.role);
@@ -37,8 +36,12 @@ export class SignupComponent {
             event.email.value, event.pword.value, this.role);
         }
         else
-            console.log("Motherfucker"); //  this.role == this.roles[1] ? location.href = '/signup/as-scouter' : location.href = '/signup/as-artist';
-        this.signupService.addMember(this.object).subscribe();
+            return console.log("Oh well, I guess we're fucked");
+        if (this.object) {
+            console.log("Before we persist to the database");
+            this.signupService.addMember(this.object).subscribe();
+           // this.object.role == this.roles[1] ? location.href = 'signup/as-scouter' : location.href = 'signup/as-artist';
+        }
     }
 }
 
@@ -62,8 +65,8 @@ export abstract class Person {
 @Component({
     selector: 'as-artist',
     templateUrl: './as-artist.component.html',
-    styleUrls: ['../sign.component.css', '../../headers.component.css'],
-    providers: [AsArtistService, LocationService]
+    styleUrls: [ '../sign.component.css', '../../headers.component.css' ],
+    providers: [ AsArtistService, LocationService ]
 })
 export class Artist extends Person {
     alias: string;
@@ -83,8 +86,8 @@ export class Artist extends Person {
 @Component({
     selector: 'as-scouter',
     templateUrl: './as-scouter.component.html',
-    styleUrls: ['../sign.component.css', '../../headers.component.css'],
-    providers: [AsScouterService, LocationService]
+    styleUrls: [ '../sign.component.css', '../../headers.component.css' ],
+    providers: [ AsScouterService, LocationService ]
 })
 export class Scouter extends Person {
     label: string;

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-//@Injectable()
+@Injectable()
 export class PageInfoService {
     head = 'MuseInvest';
     title = 'Let\'s get this career to the next level';

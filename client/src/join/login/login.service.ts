@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 
 @Injectable()
@@ -27,12 +27,10 @@ export class LoginService {
     getSummary() {
         return this.summary;
     }
-    login(event) {
+    login(event:any) {
         var headers = new Headers();
-        var body = JSON.stringify("&email=" + event.email.value + "&password=" + event.password.value);
+        var body = "&email=" + event.email.value + "&password=" + event.password.value;
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
-        headers.append('Accept', 'application/json');
-        headers.append('Access-Control-Allow-Origin', '*');
         console.log("About to make an http request " + body);
         return this.http.post('http://localhost:3000/signin', body, {headers: headers})
             .map(res => res.json(), function(err){
@@ -41,5 +39,6 @@ export class LoginService {
                 else
                     console.log("Successfully sent and a recieved some packets");
             });
+        
     }
 }

@@ -22,6 +22,6 @@ export class SigninComponent {
     }
     signIn(event) {
         if (event.email.value && event.password.value)
-            return this.loginService.login(event);
+            this.loginService.login(event).subscribe();
     }
 }

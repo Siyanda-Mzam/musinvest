@@ -21,13 +21,13 @@
             <form #loginCtrl="ngForm" #event (submit)="signIn(event)" accept-charset="UTF-8" class="form-horizontal" method="post" novalidate="novalidate">
               <div class="control-group">
                 <div class="control-group">
-                  <label class="control-label" for="user_email">Email</label>
+                  <label class="control-label" for="email">Email</label>
                   <div class="controls">
                     <input required [(ngModel)]="email" name="email" ngControl="emailCtrl" class="input-xlarge" autofocus="autofocus" size="50" type="email" value="" placeholder="example@domain.com">
                   </div>
                 </div>
                 <div class="control-group">
-                  <label class="control-label" for="user_password">Password</label>
+                  <label class="control-label" for="password">Password</label>
                   <div class="controls">
                     <input required [(ngModel)]="password" name="password" ngControl="passwordCtrl" class="input-xlarge" id="user_password" size="50" type="password">
                   </div>

@@ -6,6 +6,7 @@ var db = mongoose.connect('mongodb://localhost:27017/scoutz');
 var router = express.Router();
 var crypto = require('crypto');
 db = mongoose.connection;
+var http = require('http');
 mongoose.Promise = global.Promise;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
@@ -25,14 +26,14 @@ router.post('/signup', function(req, res) {
 			lastname: req.body.surname,
 			email: req.body.email,
 			password: hash.pwd,
-			salt: hash.salt,
-			role: role.slice(role.lastIndexOf(' ')).trim(),
+			role: role.slice(role.lastIndexOf(' ')).replace('"', ''), // Fix JSON.stringify() issue.
 			alias: req.body.alias ? req.body.alias : "",
 			location: req.body.location ? req.body.location : "",
 			label: req.body.label ? req.body.label : "",
 			city: req.body.city ? req.body.city : "",
 			publicEmail: req.body.publicEmail ? req.body.publicEmail : "",
 			officialSite: req.body.officialSite ? req.body.officialSite : "",
+			salt: hash.salt,
 			addedOn : (new Date().addHours(2)).toUTCString()
 		});
 		newUser.save(function(err) {
@@ -42,10 +43,10 @@ router.post('/signup', function(req, res) {
 			} else {
 				console.log("Successfully created a user with name: %s and comes from %s and user was created at %s",
 					newUser.firstname, newUser.location, newUser.addedOn);
-				res.status(200);
+				return res.status(200);
 			}
 		});
-		res.redirect('../../client/home/home.component.html');
+		res.render('home.component.html');
 	}
 	else
 	{
@@ -56,19 +57,26 @@ router.post('/signup', function(req, res) {
 router.post('/signin', function(req, res) {
 	console.log("In the login route");
 	User.findOne({
-		email: req.body.email,
-		password: req.body.password
-	}, function(err, person) {
+		email: req.body.email
+	}).select('+salt').exec(function(err, person) {
 		if (err) {
 			console.log("MongoDB Error: " + err);
 			return res.status(500); // or callback
-		}
-		if (person) {
-			console.log("Welcome back %s", person);
-			return res.status(200);
+		} else if (person) {
+			if (person.password === hashMachine(req.body.password, person.salt).passwordHash) {
+				console.log("Welcome back %s", person.firstname);
+				return res.status(200).send({
+					message : 'Successfully logged in'
+				});
+				
+				//return http.get('http://localhost:4200');
+			}
+			else
+				console.log("You have entered an incorrect password")
+			 res.status(200);
 		} else {
 			console.log("%s does not exist. Check you email, password or try signup", req.body.email);
-			return res.status(404);
+			 res.status(404);
 		}
 	});
 });

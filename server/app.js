@@ -15,12 +15,14 @@ var cors = require('cors');
 
 app.use(cors());
 
+app.set('views', path.join(__dirname, '../client/src/home/'));
+app.engine('html', require('ejs').renderFile);
 app.set('port', process.env.PORT || 3000);
 app.disable('x-powered-by');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(logger('dev'));
-app.set(express.static(path.join(__dirname, '../app')));
+app.set(express.static(path.join(__dirname, '../client/src')));
 app.get('/', index);
 app.post('/signup', sign);
 app.post('/signin', sign);

@@ -17,7 +17,7 @@ var userSchema = new Schema({
   city          : { type: String, required: false, trim: true},
   publicEmail   : { type: String, required: false, trim: true},
   officialSite  : { type: String, required: false, trim: true},
-  salt          : { type: String, required: true, trim: true},
+  salt          : { type: String, required: true, trim: true, unique: true, select:false},
   addedOn       : {	type: String, required: false}
 });
 userSchema.pre('save', function(next) {
