@@ -1,0 +1,8 @@
+1. Send server response status to the frontend.
+2. Wire up the generic login view with the specific type view for each entity
+3. Build views for the profile/dashboard and the content upload view
+4. Configure the package file to run the server before the client such that there is no neeed to
+   explicitly start the nodemon ourselves on a separate template.
+5. Set up a universal views directory or configure the server to know where to find its views.
+6  Clean up the server to not render its own views but trigger requests for the already built ones on
+   successful requests.

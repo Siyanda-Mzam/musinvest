@@ -1,4 +1,4 @@
-<div class="top slideRight">
+<div *ngIf="!loginService.isLoggedIn()" class="top slideRight">
   <div class="container">
       <h1 class="slideRight">
 	        {{title}}

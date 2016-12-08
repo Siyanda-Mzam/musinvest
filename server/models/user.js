@@ -9,7 +9,7 @@ var userSchema = new Schema({
   firstname     : {	type: String, trim: true},
   lastname      : {	type: String, trim: true},
   email         : { type: String, required: true, unique: true, trim: true},
-  password      : { type: String, required: true},
+  password      : { type: String, required: true, select: false},
   role          : { type: String, required: true, trim: true},
   alias         : { type: String, required: false, trim: true},
   location      : { type: String, required: false},
@@ -17,7 +17,7 @@ var userSchema = new Schema({
   city          : { type: String, required: false, trim: true},
   publicEmail   : { type: String, required: false, trim: true},
   officialSite  : { type: String, required: false, trim: true},
-  salt          : { type: String, required: true, trim: true, unique: true, select:false},
+  salt          : { type: String, required: true, trim: true, unique: true, select: false},
   addedOn       : {	type: String, required: false}
 });
 userSchema.pre('save', function(next) {

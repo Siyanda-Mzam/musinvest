@@ -1,6 +1,6 @@
-var express = require("express");
-var session = require("express-session");
-var cookies = require("cookie-parser");
+var express = require("express")
+var session = require("express-session")
+var cookies = require("cookie-parser")
 var bodyParser = require("body-parser");
 var passport = require("passport");
 var LocalStrategy = require('passport-local').Strategy;
@@ -13,18 +13,18 @@ var sign = require('./routes/sign');
 var app = express();
 var cors = require('cors');
 
-app.use(cors());
-
-app.set('views', path.join(__dirname, '../client/src/home/'));
-app.engine('html', require('ejs').renderFile);
-app.set('port', process.env.PORT || 3000);
 app.disable('x-powered-by');
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(logger('dev'));
+app.use(cookies());
+app.set('views', path.join(__dirname, '../client/src/home/'));
+app.engine('html', require('ejs').renderFile);
+app.set('port', process.env.PORT || 3000);
 app.set(express.static(path.join(__dirname, '../client/src')));
 app.get('/', index);
-app.post('/signup', sign);
+app.post('/signup', sign)
 app.post('/signin', sign);
 
 app.listen(app.get('port'), function(){

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { PageInfoService } from './page-info-service';
-import { Http, Headers } from '@angular/http';
+import { Http, Request, Response, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
@@ -25,12 +25,10 @@ export class SignupService {
         headers.append('Accept', 'application/json');
         headers.append('Access-Control-Allow-Origin', '*');
         console.log("About to make an http request " + body);
-        return this.http.post('http://localhost:3000/signup', body.toString(), {headers: headers})
-            .map(res => res.json(), function(err){
-                if (err)
-                    console.log("There was an error: " + err);
-                else
-                    console.log("Successfully sent and a recieved some packets");
+        return this.http
+            .post('http://localhost:3000/signup', body.toString(), {headers: headers})
+            .map((res: Response) => {   
+                return res.json()
             });
     }
 }

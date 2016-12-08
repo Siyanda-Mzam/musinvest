@@ -11,6 +11,8 @@ import { FeaturedComponent } from '../featured/featured.component';
 import { CrowdPicksComponent } from '../crowd-picks/crowd-picks.component';
 import { DiscoverComponent } from '../discover/discover.component';
 import { SigninComponent } from '../join/login/login.component';
+import { LoginService } from '../join/login/login.service';
+import { PageInfoService } from '../join/login/page-info-service';
 import { TrackListComponent } from '../tracklist/tracklist.component';
 import { SignupComponent, Artist, Scouter } from '../join/signup/signup.component';
 
@@ -34,7 +36,7 @@ import { SignupComponent, Artist, Scouter } from '../join/signup/signup.componen
     Artist, Scouter, SignupComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [],
+  providers: [ LoginService, PageInfoService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

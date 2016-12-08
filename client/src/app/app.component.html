@@ -6,8 +6,9 @@
             <a [routerLink]="['/picks']">Crowd Picks</a>
             <a [routerLink]="['/discover']">Discover</a>
    <!-- <input class="search-query navbar-search in" type="text" name="search" size="50" placeholder="Search Musinvest">-->
-            <a [routerLink]="['/signin']">Sign In</a>
-            <a [routerLink]="['/signup']">Join us, It's FREE</a>
+            <a *ngIf="!loginService.isLoggedIn()" [routerLink]="['/signin']">Sign In</a>
+            <a *ngIf="!loginService.isLoggedIn()" [routerLink]="['/signup']">Join us, It's FREE</a>
+            <a *ngIf="loginService.isLoggedIn()" (ng-click)="loginService.logout()">Logout</a>
         </div>
 </header>
 <div class="color"></div>

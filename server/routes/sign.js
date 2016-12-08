@@ -1,21 +1,24 @@
-var express = require("express");
-var mongo = require('mongodb');
-var mongoose = require('mongoose');
-var User = require('../models/user.js');
-var db = mongoose.connect('mongodb://localhost:27017/scoutz');
-var router = express.Router();
-var crypto = require('crypto');
-db = mongoose.connection;
-var http = require('http');
+'use strict'
+
+let express = require("express"),
+	mongo = require('mongodb'),
+	mongoose = require('mongoose'),
+	User = require('../models/user.js'),
+	db = mongoose.connect('mongodb://localhost:27017/scoutz'),
+	router = express.Router(),
+	crypto = require('crypto'),
+	jwt = require('jsonwebtoken'),
+	secret = 'GREYSTONE';
 mongoose.Promise = global.Promise;
+db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
-  console.log('Connected to MongoDB');
+  console.log('Connected to Database');
 });
 
 
 router.post('/signup', function(req, res) {
-	console.log("We're signing up ");
+	console.log("Inside the signup route on server");
 	if (req.body.name && req.body.surname &&
 	req.body.password && req.body.email) {
 		console.log(req.body);
@@ -26,7 +29,7 @@ router.post('/signup', function(req, res) {
 			lastname: req.body.surname,
 			email: req.body.email,
 			password: hash.pwd,
-			role: role.slice(role.lastIndexOf(' ')).replace('"', ''), // Fix JSON.stringify() issue.
+			role: role.slice(role.lastIndexOf(' ')).replace('"', ''), // Fix JSON.stringify() insane issue.
 			alias: req.body.alias ? req.body.alias : "",
 			location: req.body.location ? req.body.location : "",
 			label: req.body.label ? req.body.label : "",
@@ -38,7 +41,8 @@ router.post('/signup', function(req, res) {
 		});
 		newUser.save(function(err) {
 			if (err) {
-				console.log("User exists", err );
+				// Redirect the user back to the sign up page if the registration failed
+				console.log("We have found an identical email in the database"); 
 				res.status(500);
 			} else {
 				console.log("Successfully created a user with name: %s and comes from %s and user was created at %s",
@@ -50,35 +54,41 @@ router.post('/signup', function(req, res) {
 	}
 	else
 	{
-		console.log("You have not decided if you are a scouter or artist. What the fuck?")
+		console.log("What the fuck happened? This is a never-hit case unless the frontend is broken.\
+					Front end will  never submit unless all the above info is supplied!")
 	}
 });
 
 router.post('/signin', function(req, res) {
-	console.log("In the login route");
-	User.findOne({
+	console.log("Inside the signin route of the server");
+	var pwd;
+	let claim;
+	var us = User.findOne({
 		email: req.body.email
-	}).select('+salt').exec(function(err, person) {
+	});
+	us.select('+salt').select('+password').exec(function(err, person) {
 		if (err) {
-			console.log("MongoDB Error: " + err);
+			console.log("DataBase Error: " + err);
 			return res.status(500); // or callback
 		} else if (person) {
-			if (person.password === hashMachine(req.body.password, person.salt).passwordHash) {
+			pwd = req.body.password;
+			if (person.password === hashMachine(pwd, person.salt).passwordHash) {
 				console.log("Welcome back %s", person.firstname);
-				return res.status(200).send({
-					message : 'Successfully logged in'
-				});
-				
-				//return http.get('http://localhost:4200');
+				claim = {
+					userId: 1
+				};
+				res.body = {
+					token: jwt.sign(claim, secret)
+				};
+				return res.status(200).send(res.body);
 			}
 			else
-				console.log("You have entered an incorrect password")
-			 res.status(200);
+				return console.log("You have entered an incorrect password");
 		} else {
-			console.log("%s does not exist. Check you email, password or try signup", req.body.email);
-			 res.status(404);
+				console.log("%s does not exist. Check you email, password or try signup", req.body.email);
+			 	res.status(404);
 		}
-	});
+	});	
 });
 
 
@@ -105,6 +115,7 @@ var genRandomString = function(length){
  * @function
  * @param {string} password - List of required fields.
  * @param {string} salt - Data to be validated.
+ * For robust security we could hash the passwords more than once.
  */
 var hashMachine = function(password, salt){
     var hash = crypto.createHmac('sha512', salt); /** Hashing algorithm sha512 */
