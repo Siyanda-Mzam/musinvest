@@ -3,12 +3,14 @@
 let express = require("express"),
 	mongo = require('mongodb'),
 	mongoose = require('mongoose'),
+	creds = require('../creds/config.json'),
 	User = require('../models/user.js'),
-	db = mongoose.connect('mongodb://localhost:27017/scoutz'),
+	db = mongoose.connect('mongodb://' + creds.config.USR + ':' + creds.config.PWORD + '@ds145299.mlab.com:45299/museinvest'),
 	router = express.Router(),
 	crypto = require('crypto'),
 	jwt = require('jsonwebtoken'),
-	secret = 'GREYSTONE';
+	secret = creds.config.jwtSecret;
+
 mongoose.Promise = global.Promise;
 db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));

@@ -31,5 +31,9 @@
     "passport-local-mongoose": "^4.0.0",
     "serve-favicon": "^2.3.0",
     "session": "^0.1.0"
+  },
+  "devDependencies": {
+    "compass": "^0.1.1",
+    "sass": "^0.5.0"
   }
 }

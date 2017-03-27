@@ -1,7 +1,6 @@
-<div class="header-wrapper">
 <header id="header">
-    <h1 id="logo"><a routerLink="/"></a></h1>
-        <div id="menu" class="control-group">
+    <a id="home-icon" routerLink="/"></a>
+        <div id="menu">
             <a [routerLink]="['/featured']">Featured</a>
             <a [routerLink]="['/picks']">Crowd Picks</a>
             <a [routerLink]="['/discover']">Discover</a>
@@ -13,4 +12,3 @@
 </header>
 <div class="color"></div>
 <router-outlet></router-outlet>
-</div>

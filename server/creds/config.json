@@ -1,0 +1,7 @@
+{
+    "config" : {
+        "USR" : "simzam",
+        "PWORD": "7bitsfacebook7",
+        "jwtSecret" : "GREYSTONE"
+    }
+}

@@ -18,7 +18,7 @@ module.exports = {
     loaders: [
       { test: /\.js$/, loader: "source-map-loader", exclude: [ root('node_modules/rxjs') ]},
       { test: /\.ts$/, loader: 'awesome-typescript-loader' },
-      { test: /\.(html|css)$/, loader: 'raw-loader' }
+      { test: /\.(html|scss)$/, loader: 'raw-loader' }
     ]
   }
 };

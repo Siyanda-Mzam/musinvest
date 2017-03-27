@@ -23,7 +23,7 @@ module.exports = {
     ],
     loaders: [
       { test: /\.ts$/, loader: 'awesome-typescript-loader', exclude: [ /\.(spec|e2e)\.ts$/ ] },
-      { test: /\.(html|css)$/, loader: 'raw-loader' }
+      { test: /\.(html|scss)$/, loader: 'raw-loader' }
     ]
   },
   devServer: {
