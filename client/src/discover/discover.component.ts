@@ -3,7 +3,7 @@ import {Component} from '@angular/core';
 @Component({
   selector: 'discover',
   templateUrl: './discover.component.html',
-  styleUrls: ['../headers.component.css']
+  styleUrls: ['../headers.component.css', '../shared/styles/heading.scss']
 })
 export class DiscoverComponent {
   title = 'Discover New Music';

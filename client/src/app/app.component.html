@@ -1,14 +1,21 @@
-<header id="header">
-    <a id="home-icon" routerLink="/"></a>
-        <div id="menu">
-            <a [routerLink]="['/featured']">Featured</a>
-            <a [routerLink]="['/picks']">Crowd Picks</a>
-            <a [routerLink]="['/discover']">Discover</a>
-   <!-- <input class="search-query navbar-search in" type="text" name="search" size="50" placeholder="Search Musinvest">-->
-            <a *ngIf="!loginService.isLoggedIn()" [routerLink]="['/signin']">Sign In</a>
-            <a *ngIf="!loginService.isLoggedIn()" [routerLink]="['/signup']">Join us, It's FREE</a>
-            <a *ngIf="loginService.isLoggedIn()" (ng-click)="loginService.logout()">Logout</a>
-        </div>
-</header>
+<section class="navigation">
+  <div class="nav-container">
+    <div class="brand">
+      <a href="#!">Logo</a>
+    </div>
+    <nav>
+      <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+      <ul class="nav-list">
+        <li><a href="#!">Home</a></li>
+        <li><a [routerLink]="['/featured']">Featured</a></li>
+        <li><a [routerLink]="['/discover']">Events</a></li>
+        <li><a [routerLink]="['/picks']">Crowd Picks</a></li>
+        <li><a [routerLink]="['/discover']">Discover</a></li>
+        <li><a *ngIf="!loginService.isLoggedIn()" [routerLink]="['/signin']">Sign In</a></li>
+        <li><a *ngIf="!loginService.isLoggedIn()" [routerLink]="['/signup']">Join us, It's FREE</a></li>            
+      </ul>
+    </nav>
+  </div>
+</section>
 <div class="color"></div>
 <router-outlet></router-outlet>

@@ -1,0 +1,20 @@
+@import '../partials/_imports.scss';
+
+span, p {
+    display: block;
+    padding-left: 60px;
+    h1 {
+        @include heading(relative, 10px 0 5px 0, 5em, Titillium Web);
+    }
+}
+
+p {
+    @include heading(relative, 0 0 15px 0, 3em, Titillium Web);
+}
+
+hr.sleek-line {
+    border: 0;
+    height: 1px;
+    background: $futureGray;
+    background-image: linear-gradient(to right, $futureGray, #876a6a, $futureRed);
+}

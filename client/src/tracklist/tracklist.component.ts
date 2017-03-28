@@ -5,7 +5,7 @@ import {TrackListService} from './tracklist.service';
 @Component({
   selector: 'track-list',
   templateUrl: './tracklist.component.html',
-  styleUrls: ['./tracklist.component.css', '../headers.component.css'],
+  styleUrls: ['./tracklist.component.scss', '../headers.component.css'],
   providers: [TrackListService]
 })
 export class TrackListComponent {

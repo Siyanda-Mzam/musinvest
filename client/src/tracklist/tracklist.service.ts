@@ -5,7 +5,7 @@ import {Image} from './tracklist.interface';
 export class TrackListService {
     //IMAGES array implementing Image interface
     images = [
-	{ "title": "The Rapper", "url": "../images/fire-rose.jpg" },
+	{ "title": "The Rapper", "url": "/images/fire-rose.jpg" },
 	{ "title": "Future", "url": "../images/future-pluto.jpg" },
     { "title": "Tory", "url": "../images/tory-lanez.jpg" },
 	{ "title": "Purple Reign", "url": "../images/esco-terrestrial.png" },

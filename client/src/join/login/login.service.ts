@@ -41,7 +41,7 @@ export class LoginService {
                 }
             });
     }
-    isLoggedIn() { return this.token !== "" ? true : false}
+    isLoggedIn() { return this.token !== null ? true : false}
     logout() {
         this.token = null;
         localStorage.removeItem('currentUser');

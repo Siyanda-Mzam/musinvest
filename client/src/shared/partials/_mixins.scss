@@ -19,3 +19,16 @@
             transform: translateX(-50%);
 
 }
+@mixin center-element-using-margins {
+    display: block;
+    margin-right: auto;
+    margin-left: auto !important;
+    text-align: center;
+}
+
+@mixin heading($pos: relative, $spaces: 0 0 15px 0, $fsize: 2.5em, $ffamily: 'Titillium Web') {
+    position: $pos;
+    margin: $spaces;
+    font-size: $fsize;
+    font-family: $ffamily, sans-serif;
+}

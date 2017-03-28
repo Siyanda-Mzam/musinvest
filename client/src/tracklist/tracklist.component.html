@@ -1,10 +1,9 @@
-<div class="responsive fadeIn">
-  <div class="img" *ngFor="let image of images" style="margin:10px;display:inline-block">
+<div class="artwork-container fadeIn">
+  <div class="artwork" *ngFor="let image of images">
     <a target="_blank" href="/player">
-      <img src="{{image.url}}" alt="">
+      <img class="artwork-image-cover" src="{{image.url}}" alt="{{image.title}}"/>
     </a>
-      <div class="desc" onmouseover="this.style.background='gray'"
-          onmouseout="this.style.background='#525459'">{{image.title}}</div>
+      <div class="artwork-title"><p>{{image.title}}</p></div>
   </div>
 </div>
 
