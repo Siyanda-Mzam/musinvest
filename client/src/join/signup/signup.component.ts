@@ -2,10 +2,72 @@ import { Component } from '@angular/core';
 import { SignupService, AsScouterService, AsArtistService, LocationService } from './signup.service';
 import { PageInfoService } from './page-info-service';
 
+
+// Abstract where all entities extend
+export abstract class Person {
+    name: string;
+    surname: string;
+    email: string;
+    password: string;
+    role: string;
+    constructor(name:string, surname:string, email:string, password:string, role:string) {
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.password = password;
+        role ? this.role = role : this.role = null;
+        console.log("Inside the super class: Person");
+    }
+}
+
+
+// Specific entity (ARTIST)
+@Component({
+    selector: 'as-artist',
+    templateUrl: './as-artist.component.html',
+    styleUrls: [ '../sign.component.css', '../../shared/styles/animations.css' ],
+    providers: [ AsArtistService, LocationService ]
+})
+export class Artist extends Person {
+    alias: string;
+    origin: string;
+    contact: number;
+    constructor(name:string, surname:string, email:string, password:string, role:string) {
+        console.log("In artist constructor before super call");
+        super(name, surname, email, password, role);
+        console.log("After super call");
+    }
+    chooseCity(value) {
+        this.origin = value;
+    }
+}
+
+
+// Specific entity (SCOUTER)
+@Component({
+    selector: 'as-scouter',
+    templateUrl: './as-scouter.component.html',
+    styleUrls: [ '../sign.component.css', '../../shared/styles/animations.css' ],
+    providers: [ AsScouterService, LocationService ]
+})
+export class Scouter extends Person {
+    label: string;
+    regNo: string;
+    city: string;
+    provinces: string[];
+    publicEmail: string;
+    website: string;
+    constructor(name:string, surname:string, email:string, password:string, role:string) {
+        super(name, surname, email, password, role);
+    }
+}
+
+
+// Handles the Sign-Up process
 @Component({
     selector: 'signup',
     templateUrl: './signup.component.html',
-    styleUrls: [ '../sign.component.css', '../../headers.component.css' ],
+    styleUrls: [ '../sign.component.css', '../../shared/styles/animations.css' ],
     providers: [ SignupService, PageInfoService ]
 })
 export class SignupComponent {
@@ -42,61 +104,5 @@ export class SignupComponent {
             this.signupService.addMember(this.object).subscribe();
            // this.object.role == this.roles[1] ? location.href = 'signup/as-scouter' : location.href = 'signup/as-artist';
         }
-    }
-}
-
-export abstract class Person {
-    name: string;
-    surname: string;
-    email: string;
-    password: string;
-    role: string;
-    constructor(name:string, surname:string, email:string, password:string, role:string) {
-        this.name = name;
-        this.surname = surname;
-        this.email = email;
-        this.password = password;
-        role ? this.role = role : this.role = null;
-        console.log("Inside the super class: Person");
-    }
-}
-
-
-@Component({
-    selector: 'as-artist',
-    templateUrl: './as-artist.component.html',
-    styleUrls: [ '../sign.component.css', '../../headers.component.css' ],
-    providers: [ AsArtistService, LocationService ]
-})
-export class Artist extends Person {
-    alias: string;
-    origin: string;
-    contact: number;
-    constructor(name:string, surname:string, email:string, password:string, role:string) {
-        console.log("In artist constructor before super call");
-        super(name, surname, email, password, role);
-        console.log("After super call");
-    }
-    chooseCity(value) {
-        this.origin = value;
-    }
-}
-
-
-@Component({
-    selector: 'as-scouter',
-    templateUrl: './as-scouter.component.html',
-    styleUrls: [ '../sign.component.css', '../../headers.component.css' ],
-    providers: [ AsScouterService, LocationService ]
-})
-export class Scouter extends Person {
-    label: string;
-    regNo: string;
-    city: string;
-    provinces: string[];
-    publicEmail: string;
-    website: string;
-    constructor(name:string, surname:string, email:string, password:string, role:string) {
-        super(name, surname, email, password, role);
     }
 }

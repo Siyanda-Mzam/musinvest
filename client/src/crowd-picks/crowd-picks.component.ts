@@ -3,7 +3,7 @@ import {Component} from '@angular/core';
 @Component({
   selector: 'crowd-picks',
   templateUrl: './crowd-picks.component.html',
-  styleUrls: ['../headers.component.css', '../shared/styles/heading.scss']
+  styleUrls: ['../shared/styles/animations.css', '../shared/styles/heading.scss']
 })
 export class CrowdPicksComponent {
   title = 'Crowd Picks';

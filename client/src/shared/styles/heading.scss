@@ -1,5 +1,14 @@
 @import '../partials/_imports.scss';
 
+h1,
+h2,
+h3,
+h4,
+summary,
+label,
+p{
+    color: #aaafb7;
+}
 span, p {
     display: block;
     padding-left: 60px;

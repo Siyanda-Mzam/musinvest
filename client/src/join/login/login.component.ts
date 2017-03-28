@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Component({
     selector: 'login',
     templateUrl: './login.component.html',
-    styleUrls: [ '../sign.component.css', '../../headers.component.css' ],
+    styleUrls: [ '../sign.component.css', '../../shared/styles/animations.css' ],
     providers: [ LoginService, PageInfoService ]
 })
 export class SigninComponent {
