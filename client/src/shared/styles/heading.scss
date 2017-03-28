@@ -11,7 +11,7 @@ p{
 }
 span, p {
     display: block;
-    padding-left: 60px;
+    padding-left: 100px;
     h1 {
         @include heading(relative, 10px 0 5px 0, 5em, Titillium Web);
     }
@@ -25,5 +25,5 @@ hr.sleek-line {
     border: 0;
     height: 1px;
     background: $futureGray;
-    background-image: linear-gradient(to right, $futureGray, #876a6a, $futureRed);
+    background-image: linear-gradient(to right, $futureGray, $futureLineTrans, $futureRed);
 }

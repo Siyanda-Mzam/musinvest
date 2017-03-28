@@ -1,3 +1,5 @@
+@import './shared/fonts/fonts.scss';
+
 html, body {
   font-size: 62.5%;
   padding: 0;
@@ -9,3 +11,4 @@ hr
 {
     background-color: red !important
 }
+

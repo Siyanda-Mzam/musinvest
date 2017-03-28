@@ -3,39 +3,47 @@
     box-sizing: border-box;
 }
 
-
-.artwork .artwork-image-cover  {
-    width: 300px;
-    height: 300px;
+.artwork-container {
+    top: 15px;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    .artwork {
+        display: inline-block;
+        margin: 10px;
+    }
 }
 
-.artwork-title {
-    background: #525459;
-    text-align: center;
-    transition: 0.5s;
+.artwork-image-cover  {
+    @include setArtworkDimensionsTo(300px, 300px);
+}
+
+.artwork {
+    a {
+        text-decoration: none;
+        color: $black;
+    }
     &:hover {
-        background-color: $futureArtWorkRed;
+        .artwork-title {
+            background-color: $futureArtWorkRed;
+        }
         p {
             color: $white;
             transition: 0.6s;
         }
     }
+}
+
+.artwork-title {
+    background: $futureLightGray;
+    text-align: center;
+    transition: 0.5s;
     p {
         margin: 0 !important;
         font-size: 3em;
         font-family: 'Titillium Web', sans-serif;
         padding: 10px;
-    }
-}
-
-
-
-.artwork-container {
-    height: 100%;
-    @include center-element-using-margins;
-    .artwork {
-        display: inline-block;
-        margin: 15px;
     }
 }
 
