@@ -1,54 +1,39 @@
-<div *ngIf="!loginService.isLoggedIn()" class="top slideRight">
-  <div class="container">
-      <h1 class="slideRight">
-	        {{title}}
-        </h1>
-      <p class="fadeIn">
-        {{body}}
-      </p>
-      <hr class="sleek-line">
-      <div class="span5 control-group">
-        <div class="span5">
+<div *ngIf="!loginService.isLoggedIn()" class="log-container top slideRight">
+        <span><h1 class="slideRight">
+	          {{title}}
+        </h1></span>
+        <p class="fadeIn">
+          {{body}}
+        </p>
+        <hr class="sleek-line">
+      <div class="left-content">
           <h2>{{head}}</h2>
           <h4>{{summary}}</h4>
-        </div>
       </div>
-      <div style="margin-left:47%">
-        <div class="vert-line fadeIn"></div>
-        <div class="span6">
-          <div style="padding-top:10px">
-            <h4> {{signInSubHeader}} </h4>
+      <div class="right-content">
+            <p> {{signInSubHeader}} </p>
             <form #loginCtrl="ngForm" #event (submit)="signIn(event)" accept-charset="UTF-8" class="form-horizontal" method="post" novalidate="novalidate">
-              <div class="control-group">
+              <div class="controls-container">
                 <div class="control-group">
-                  <label class="control-label" for="email">Email</label>
+                  <label for="email">Email</label>
                   <div class="controls">
-                    <input required [(ngModel)]="email" name="email" ngControl="emailCtrl" class="input-xlarge" autofocus="autofocus" size="50" type="email" value="" placeholder="example@domain.com">
+                    <input required [(ngModel)]="email" name="email" ngControl="emailCtrl" class="text-field" autofocus="autofocus" size="50" type="email" value="" placeholder="example@domain.com">
                   </div>
                 </div>
                 <div class="control-group">
-                  <label class="control-label" for="password">Password</label>
+                  <label for="password">Password</label>
                   <div class="controls">
-                    <input required [(ngModel)]="password" name="password" ngControl="passwordCtrl" class="input-xlarge" id="user_password" size="50" type="password">
+                    <input required [(ngModel)]="password" name="password" ngControl="passwordCtrl" class="text-field" id="user_password" size="50" type="password" placeholder="Your current password with us">
                   </div>
                 </div>
                 <div class="control-group">
                   <div class="controls">
-                    <div class="control-sign">
-                      <input [disabled]="!loginCtrl.form.valid" class="btn btn-primary" name="commit" type="submit" value="Sign Me In">
-                    </div>
-                    <div class="control-sign">
-                      <label> <a style="text-decoration:none" href='recover'>Forgot Password?</a> </label>
-                    </div>
+                    <input [disabled]="!loginCtrl.form.valid" class="btn" name="commit" type="submit" value="Sign Me In">
+                    <a id="join-us" href='signup'>New here? Join us!</a>
+                    <a id="recover-password" href='recover'>Forgot Password?</a>
                   </div>
-                </div>
-                <div class="controls">
-                  <label> <a style="text-decoration:none;margin-top:.5px" href='signup'>New here? Join us!</a> </label>
                 </div>
               </div>
             </form>
-          </div>
-        </div>
       </div>
-  </div>
 </div>

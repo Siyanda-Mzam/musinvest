@@ -25,7 +25,7 @@ export abstract class Person {
 @Component({
     selector: 'as-artist',
     templateUrl: './as-artist.component.html',
-    styleUrls: [ '../sign.component.css', '../../shared/styles/animations.css' ],
+    styleUrls: [ '../sign.component.scss', '../../shared/styles/animations.css' ],
     providers: [ AsArtistService, LocationService ]
 })
 export class Artist extends Person {
@@ -47,7 +47,7 @@ export class Artist extends Person {
 @Component({
     selector: 'as-scouter',
     templateUrl: './as-scouter.component.html',
-    styleUrls: [ '../sign.component.css', '../../shared/styles/animations.css' ],
+    styleUrls: [ '../sign.component.scss', '../../shared/styles/animations.css' ],
     providers: [ AsScouterService, LocationService ]
 })
 export class Scouter extends Person {
@@ -67,7 +67,7 @@ export class Scouter extends Person {
 @Component({
     selector: 'signup',
     templateUrl: './signup.component.html',
-    styleUrls: [ '../sign.component.css', '../../shared/styles/animations.css' ],
+    styleUrls: [ '../sign.component.scss', '../../shared/styles/animations.css' ],
     providers: [ SignupService, PageInfoService ]
 })
 export class SignupComponent {

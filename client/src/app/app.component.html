@@ -12,7 +12,7 @@
         <li><a [routerLink]="['/picks']">Crowd Picks</a></li>
         <li><a [routerLink]="['/discover']">Discover</a></li>
         <li><a *ngIf="!loginService.isLoggedIn()" [routerLink]="['/signin']">Sign In</a></li>
-        <li><a *ngIf="!loginService.isLoggedIn()" [routerLink]="['/signup']">Join us, It's FREE</a></li>            
+        <li><a class="btn" *ngIf="!loginService.isLoggedIn()" [routerLink]="['/signup']">Join us, It's FREE</a></li>            
       </ul>
     </nav>
   </div>

@@ -5,23 +5,23 @@
 // Outer navigation wrapper
 .navigation {
   height: $nav-height;
-  background: $nav-background;
+ // background: $nav-background;
   &:after {
-    content: '';
-    width: 100%;
-    height: 1px;
-    position: relative;
-    display: inline-block;
-    border: 0;
-    background: $futureGray;
-    background-image: linear-gradient(to right, $futureRed, #876a6a, $futureGray) !important;
-  }
+      content: '';
+      width: 100%;
+      height: 1px;
+      position: relative;
+      display: inline-block;
+      border: 0;
+      background: $futureGray;
+      background-image: linear-gradient(to right, $futureRed, #876a6a, $futureGray) !important;
+    }
 }
 
 // Logo and branding
 .brand {
   position: absolute;
-  float: left;
+  left:100px;
   line-height: $nav-height;
   text-transform: uppercase;
   font-size: 1.4em;
@@ -53,7 +53,6 @@ nav {
         display: block;
         padding: 0 20px;
         line-height: $nav-height;
-        background: $nav-background;
         color: $nav-font-color;
         text-decoration: none;
         font-family: 'Titillium Web', sans-serif;
@@ -90,6 +89,9 @@ nav {
   // Hamburger nav visible on mobile only
   .nav-mobile {
     display: block;
+  }
+  .brand {
+    left: 13px;
   }
   nav {
    width: 100%;
@@ -155,4 +157,34 @@ nav {
       transform: rotate(-45deg);
     }
   }
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px !important;
+    margin-bottom: 0;
+    margin-top: 18px;
+    font-weight: 400;
+    line-height: 1.42857143 !important;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    outline: none;
+    border-radius: 4px;
+    color: $white !important;
+    background-image: linear-gradient(to top, $gradStart, $gradTrans, $gradStop);;
+    border-color: $futureButtons;
+    &:hover {
+        background-color: $futureLinks;
+        border-color: $futureLinks;
+    }
 }

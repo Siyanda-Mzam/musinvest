@@ -7,9 +7,9 @@ export class PageInfoService {
     body = 'It\'s either you step forward into growth or step back into safety';
     summary = 'is a free online platform built to serve\
     as a common ground of reach between musicians and talent seekers.\
-    Artists put up their music on the platform for showcasing,\
-    and Scouters browse, discover and invest in them.';
-    join = 'Accelerate the growth of your career with us, today.';
+    Artists put up their music on the platform for showcasing\
+    and Scouters discover and invest in them.';
+    join = 'Come on now, accelerate the growth of your career with us, today!';
     signupSubHeader = 'Put your 2 cents in and get a buck back:';
     confMsg = 'You will receive an email to confirm your part in\
      this venture';

@@ -1,59 +1,59 @@
-<div class="top slideLeft">
-    <div class="container">
-        <h1 class="stretchRight"> {{title}}</h1>
+<div class="log-container slideLeft">
+        <span><h1 class="stretchRight"> {{title}}</h1></span>
         <p class="fadeIn"> {{body}} </p>
         <hr class="sleek-line">
-        <div class="span5 control-group">
+        <div class="left-content">
             <h2>{{head}}</h2>
-            <h4>{{summary}}<br>{{join}}</h4>
+            <h4>{{summary}}<br><br><i>{{join}}</i></h4>
         </div>
-        <div style="margin-left:47%">
-            <div class="vert-line fadeIn"></div>
-            <div class="span6">
+        <div class="right-content">
                 <h4> {{signupSubHeader}} </h4>
                 <form #formCtrl="ngForm" #event (submit)="joinUs(event)" accept-charset="UTF-8" method="post" novalidate="novalidate">
-                    <div class="control-group">
+                    <div class="controls-container">
                         <div class="control-group">
+                            <label for="firstname">First Name</label>
                             <div class="controls">
-                                <input ngControl="firstNameCtrl" required class="input-xlarge" [(ngModel)]="fname" name="fname" size="50" type="text" placeholder="Birth name">
+                                <input ngControl="firstNameCtrl" required class="text-field" [(ngModel)]="fname" name="fname" size="50" type="text" autofocus="autofocus" placeholder=" Birth name">
                             </div>
                         </div>
                         <div class="control-group">
+                            <label for="firstname">Last Name</label>
                             <div class="controls">
-                                <input class="input-xlarge" id="user_last_name" [(ngModel)]="lname" name="lname" size="50" type="text" placeholder="Last name">
+                                <input class="text-field" id="user_last_name" [(ngModel)]="lname" name="lname" size="50" type="text" placeholder=" Your Surname">
                             </div>
                         </div>
                         <div class="control-group">
+                            <label for="firstname">Email</label>
                             <div class="controls">
-                                <input ngControl="emailCtrl" required class="input-xlarge" [(ngModel)]="email" name="email" size="50" type="email" placeholder="example@domain.com">
+                                <input ngControl="emailCtrl" required class="text-field" [(ngModel)]="email" name="email" size="50" type="email" placeholder=" example@domain.com">
                             </div>
                         </div>
                         <div class="control-group">
+                            <label for="firstname">Password</label>
                             <div class="controls">
-                                <input ngControl="passwordCtrl" required class="input-xlarge" id="user_password" [(ngModel)]="pword" name="pword" size="50" type="password" placeholder="for your new account with us">
+                                <input ngControl="passwordCtrl" required class="text-field" id="user_password" [(ngModel)]="pword" name="pword" size="50" type="password" placeholder=" for your new account with us">
                             </div>
                         </div>
                         <div class="control-group">
+                            <label for="firstname">Your Role</label>
                             <div class="controls">
-                                <select #t (change)="asRole(t.value)" class="input-select" name="roleSelect">
+                                <select #t (change)="asRole(t.value)" class="text-field" name="roleSelect">
                                     <option *ngFor="let role of roles" [value]="role">{{role}}</option>
                                 </select>
-                                <p style="color:#e6e8ed !important"> {{confMsg}} </p>
                             </div>
+                            <p id="confirmation-msg" class="controls"> {{confMsg}} </p>                            
                         </div>
                         <div class="control-group">
                             <div class="controls">
                                 <div class="control-sign">
                                     <input [disabled]="!formCtrl.form.valid" class="btn btn-primary" name="commit" type="submit" value="Continue">
+                                    <a style="text-decoration:none" href='/signin'>Or Sign In</a>                                    
                                 </div>
                                 <div class="control-sign">
-                                    <label> <a style="text-decoration:none" href='/signin'>Or Sign In</a> </label>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </form>
-            </div>
         </div>
-    </div>
 </div>
