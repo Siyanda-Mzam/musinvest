@@ -23,10 +23,10 @@ export class LoginService {
     getSummary() { return this.summary; }
     login(event:any) : Observable<boolean> {
         let obj,
-        headers = new Headers({'Content-Type': 'application/x-www-form-urlencoded', 'Authorisation': 'Bearer ' + this.token}),
+        headers = new Headers({'Content-Type': 'application/x-www-form-urlencoded', 'Access-Control-Allow-Origin' : '*', 'Authorisation': 'Bearer ' + this.token}),
             body = "&email=" + event.email.value + "&password=" + event.password.value;
         console.log("In LoginService, pre HTTP request with body " + body);
-        return this.http.post('http://localhost:3000/signin', body, {headers: headers})
+        return this.http.post('http://localhost:4500/signin', body, {headers: headers})
             .map(res => {
                 let token = res.json() && res.json().token;
                 if (token) {

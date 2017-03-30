@@ -26,7 +26,7 @@ export class SignupService {
         headers.append('Access-Control-Allow-Origin', '*');
         console.log("About to make an http request " + body);
         return this.http
-            .post('http://localhost:3000/signup', body.toString(), {headers: headers})
+            .post('http://localhost:4500/signup', body.toString(), {headers: headers})
             .map((res: Response) => {   
                 return res.json()
             });

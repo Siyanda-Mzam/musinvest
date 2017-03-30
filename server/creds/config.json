@@ -2,6 +2,8 @@
     "config" : {
         "USR" : "simzam",
         "PWORD": "7bitsfacebook7",
-        "jwtSecret" : "GREYSTONE"
+        "jwtSecret" : "GREYSTONE",
+        "CLIENT_PORT": "4200",
+        "SERVER_PORT": "4500"
     }
 }
