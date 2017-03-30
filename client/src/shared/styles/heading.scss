@@ -18,6 +18,7 @@ span, p {
     @media #{ $iPhone4Port } {
         padding-left: 10px;
     }
+
     h1 {
         @include heading(relative, 10px 0 5px 0, 5em, Titillium Web);
         @media #{ $iPhone4Land } {
@@ -26,11 +27,20 @@ span, p {
         @media #{ $iPhone4Port } {
             @include heading(relative, 22px 0 0 0, 2.5em, Titillium Web);
         }
+        @media #{ $iPadPort } {
+            @include heading(relative, 23px 0 0 0, 5em, Titillium Web);    
+        }
     }
 }
 
 p {
     @include heading(relative, 0px 0 5px 0, 2em, Titillium Web);
+    @media #{ $iPadLand } {
+        @include heading(relative, 0px 0 15px 0, 2em, Titillium Web);    
+    }
+    @media #{ $iPadPort } {
+        @include heading(relative, 0px 0 15px 0, 2.5em, Titillium Web);    
+    }
 }
 
 hr.sleek-line {
