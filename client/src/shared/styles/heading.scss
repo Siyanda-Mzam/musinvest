@@ -12,13 +12,25 @@ p{
 span, p {
     display: block;
     padding-left: 100px;
+    @media #{ $iPhone4Land } {
+        padding-left: 10px;
+    }
+    @media #{ $iPhone4Port } {
+        padding-left: 10px;
+    }
     h1 {
         @include heading(relative, 10px 0 5px 0, 5em, Titillium Web);
+        @media #{ $iPhone4Land } {
+            @include heading(relative, 22px 0 0 0, 2.5em, Titillium Web);
+        }
+        @media #{ $iPhone4Port } {
+            @include heading(relative, 22px 0 0 0, 2.5em, Titillium Web);
+        }
     }
 }
 
 p {
-    @include heading(relative, 0 0 15px 0, 3em, Titillium Web);
+    @include heading(relative, 0px 0 5px 0, 2em, Titillium Web);
 }
 
 hr.sleek-line {

@@ -4,6 +4,11 @@
     position: absolute;
     width: 100%;
     height: 50%;
+    @media #{ $iPadPort } {
+        overflow: hidden;
+        height: 100%;
+        width:100%;
+    }
     &:before {
         content: '';
         position: absolute;
@@ -15,6 +20,15 @@
         left: 50%;
         -webkit-transform: translate(-50%, -50%);
                 transform: translate(-50%, -50%);
+        @media #{ $iPhone4Land } {
+            display: none;
+        }
+        @media #{ $iPhone4Port } {
+            display: none;
+        }
+        @media #{ $iPadPort } {
+            top:44%;
+        }
     }
     h1, p {
         color: $futureLabels;
@@ -28,28 +42,75 @@
     left: 50%;
     height: 50%;
     margin: 0 13%;
+    overflow:visible;
+    @media #{ $iPhone4Land } {
+        left: 10px;
+        margin: 0;
+        width: 100%;
+    }
+    @media #{ $iPhone4Port } {
+        left: 14px;
+        top: 45%;
+        margin: 0;
+        width: 100%;
+    }
+    @media #{ $iPadPort } {
+        position: relative;
+        left: 35%;
+        margin: 0 0 0 8%;
+        top: 15%;
+    }
+    @media #{ $iPadLand } {
+        margin: 0 0 0 5%;
+        width: 45%;
+    }
     p {
         padding: initial;
     }
     h4 {
         font-family: 'Titillium Web';
         font-size: 3em;
+        @media #{ $iPhone4Port } {
+            font-size:2em;
+        }
+        @media #{ $iPadPort } {
+            font-size: 2.4em;
+            padding-left: 96px;
+        }
     }
     form {
         width:100%;
         height:100%;
         font-family: 'Titillium Web';
         font-size: 3em;
+        @media #{ $iPhone4Land } {
+            font-size: 2.3em;
+        }
+        @media #{ $iPhone4Port } {
+            font-size: 2em;
+        }
         .controls-container {
-            height: 100%;
+            height: 100%; 
             .control-group {
                 padding: 10px 0;
+                @media #{ $iPadPort } {
+                    padding: 23px 0;
+                    label {
+                        display: none;
+                    }
+                }
                 .control-label {
                 }
                 .controls {
                     position: absolute;
                     display: inline-block;
                     left: 120px;
+                    @media #{ $iPhone4Port } {
+                        left:95px;
+                    }
+                    @media #{ $iPadPort } {
+                        left: 95px;
+                    }
                     select {
                         width: 311%;
                     }
@@ -62,6 +123,18 @@
                         outline-color: transparent;
                         &:focus {
                             outline-color: red;
+                        }
+                        @media #{ $iPhone4Land } {
+                            width:330px;
+                        }
+                        @media #{ $iPhone4Port } {
+                            width:200px;
+                        }
+                        @media #{ $iPadLand } {
+                            width: 305px;
+                        }
+                        @media #{ $iPadPort } {
+                            width: 305px;
                         }
                     }
                     a {
@@ -106,6 +179,12 @@
                         display: block;
                         top: 25px;
                         position: relative;
+                        @media #{ $iPhone4Land } {
+                            top:10px;
+                        }
+                        @media #{ $iPhone4Port } {
+                            top:10px;
+                        }
                     }
                     .control-sign {
                         padding-top: 25px;
@@ -119,6 +198,25 @@
                 #confirmation-msg {
                     top:300px;
                     font-size: 1em;
+                    @media #{ $iPhone4Land } {
+                        top: 273px;
+                        font-size: 0.9em;
+                        overflow: visible;
+                    }
+                    @media #{ $iPhone4Port } {
+                        top: 236px;
+                        font-size: .65em;
+                    }
+                    @media #{ $iPadPort } {
+                        top: 271px;
+                        font-size: .7em;
+                        width: 474px;
+                    }
+                    @media #{ $iPadLand } {
+                        top: 305px;
+                        font-size: 0.7em;
+                        overflow: visible;
+                    }
                 }
                 label {
                     color: $white;
@@ -134,16 +232,37 @@
     right: 50%;
     height: 50%;
     color: white;
+    font-family: 'Titillium Web';
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 1px;
+    @media #{ $iPhone4Land } {
+        display: none;
+    }
+    @media #{ $iPhone4Port } {
+        display: none;
+    }
+    @media #{ $iPadPort } {
+        top: 25%;
+    }
+    @media #{ $iPadLand } {
+        top: 58%;
+    }
     h2, h4 {
-        font-family: 'Titillium Web';
-        font-size: 5em;
-        font-weight: 500;
         margin: 0 25%;
-        text-align: center;
+    }
+    h2 {
+        font-size: 5em;
+        margin-top: -11px;
     }
     h4 {
         font-size: 3em;
         padding-top: 20px;
-        letter-spacing: 1px;
+        @media #{ $iPadPort } {
+            margin: 0 5%;
+        }
+        @media #{ $iPadLand } {
+            margin: 0 8%;
+        }
     }
 }
