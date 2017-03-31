@@ -24,14 +24,14 @@ router.post('/signup', function(req, res) {
 	if (req.body.name && req.body.surname &&
 	req.body.password && req.body.email) {
 		console.log(req.body);
-		var role = JSON.stringify(req.body.role);
+		var role = req.body.role;
 		var hash = hashPassword(req.body.password);
 		var newUser = new User({
 			firstname: req.body.name,
 			lastname: req.body.surname,
 			email: req.body.email,
 			password: hash.pwd,
-			role: role.slice(role.lastIndexOf(' ')).replace('"', ''), // Fix JSON.stringify() insane issue.
+			role: role.slice(role.lastIndexOf(' ')).replace('"', ''), // Remove quotation mark at the end of the role.
 			alias: req.body.alias ? req.body.alias : "",
 			location: req.body.location ? req.body.location : "",
 			label: req.body.label ? req.body.label : "",
@@ -44,11 +44,11 @@ router.post('/signup', function(req, res) {
 		newUser.save(function(err) {
 			if (err) {
 				// Redirect the user back to the sign up page if the registration failed
-				console.log("We have found an identical email in the database"); 
+				console.log("We have found an identical email in the database: " + err.errmsg); 
 				res.status(500);
 			} else {
-				console.log("Successfully created a user with name: %s and comes from %s and user was created at %s",
-					newUser.firstname, newUser.location, newUser.addedOn);
+				console.log("Successfully created a user with name: %s. Created at %s",
+					newUser.firstname, newUser.addedOn);
 				return res.status(200);
 			}
 		});
@@ -57,7 +57,8 @@ router.post('/signup', function(req, res) {
 	else
 	{
 		console.log("What the fuck happened? This is a never-hit case unless the frontend is broken.\
-					Front end will  never submit unless all the above info is supplied!")
+					Front end will  never submit unless all the above info is supplied! \n\n" + req.body.name + req.body.surname +
+	req.body.password + req.body.email)
 	}
 });
 
@@ -94,9 +95,7 @@ router.post('/signin', function(req, res) {
 });
 
 
-// For some reason GMT time is 2 hours
-// behind in South Africa. So this is
-// a quick fix of the problem.
+// Plus 2 for South African GMT
 Date.prototype.addHours = function(h){
     this.setHours(this.getHours() + h);
     return this;
