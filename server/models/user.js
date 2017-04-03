@@ -1,6 +1,6 @@
-var mongoose	= require('mongoose');
-var Schema 		= mongoose.Schema;
-var plm = require('passport-local-mongoose');
+let mongoose	= require('mongoose'),
+    Schema 		= mongoose.Schema,
+    plm = require('passport-local-mongoose');
 Date.prototype.addHours = function(h){
     this.setHours(this.getHours() + h);
     return this;
@@ -21,8 +21,23 @@ var userSchema = new Schema({
   addedOn       : {	type: String, required: false}
 });
 userSchema.pre('save', function(next) {
-  if (!this.addedOn)
-  	this.addedOn = (new Date().addHours(2)).toUTCString();
+  if (!this.addedOn) {
+    this.addedOn = (new Date().addHours(2)).toUTCString();
+  }
+  var fields = ["alias", "location", "label", "city", "publicEmail", "officialSite", "salt"];
+  console.log("Before the loop");
+  for (var i = 0; i < fields.length; i++) {
+     var field = userSchema.get(fields[i].toString());
+     if(field == null){
+        userSchema.set(fields[i], "");
+        console.log("Field is null " + fields[i]);
+     }
+     else {
+       userSchema.set(fields[i], "Did not work");
+       console.log(fields[i] + " field is NOT null => " + field);
+     }
+  }
+  console.log("After the loop");  
   next();
 });
 userSchema.plugin(plm);

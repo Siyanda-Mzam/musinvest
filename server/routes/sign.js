@@ -24,22 +24,21 @@ router.post('/signup', function(req, res) {
 	if (req.body.name && req.body.surname &&
 	req.body.password && req.body.email) {
 		console.log(req.body);
-		var role = req.body.role;
-		var hash = hashPassword(req.body.password);
-		var newUser = new User({
-			firstname: req.body.name,
-			lastname: req.body.surname,
-			email: req.body.email,
-			password: hash.pwd,
-			role: role.slice(role.lastIndexOf(' ')).replace('"', ''), // Remove quotation mark at the end of the role.
-			alias: req.body.alias ? req.body.alias : "",
-			location: req.body.location ? req.body.location : "",
-			label: req.body.label ? req.body.label : "",
-			city: req.body.city ? req.body.city : "",
-			publicEmail: req.body.publicEmail ? req.body.publicEmail : "",
-			officialSite: req.body.officialSite ? req.body.officialSite : "",
-			salt: hash.salt,
-			addedOn : (new Date().addHours(2)).toUTCString()
+		let role = req.body.role,
+			hash = hashPassword(req.body.password),
+			newUser = new User({
+				firstname: req.body.name,
+				lastname: req.body.surname,
+				email: req.body.email,
+				password: hash.pwd,
+				role: role.slice(role.lastIndexOf(' ')).replace('"', ''), // Remove quotation mark at the end of the role.
+				alias: req.body.alias,
+				location: req.body.location,
+				label: req.body.label,
+				city: req.body.city,
+				publicEmail: req.body.publicEmail,
+				officialSite: req.body.officialSite,
+				salt: hash.salt
 		});
 		newUser.save(function(err) {
 			if (err) {
