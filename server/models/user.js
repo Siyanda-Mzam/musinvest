@@ -24,7 +24,12 @@ userSchema.pre('save', function(next) {
   if (!this.addedOn) {
     this.addedOn = (new Date().addHours(2)).toUTCString();
   }
-  var fields = ["alias", "location", "label", "city", "publicEmail", "officialSite", "salt"];
+  this.alias ? true : this.alias = ""; 
+  this.location ? true : this.location = "";
+  this.label ? true : this.label = "";
+  this.city ? true : this.city = "";
+  this.publicEmail ? true : this.publicEmail = "";
+  /*var fields = ["alias", "location", "label", "city", "publicEmail", "officialSite", "salt"];
   console.log("Before the loop");
   for (var i = 0; i < fields.length; i++) {
      var field = userSchema.get(fields[i].toString());
@@ -37,7 +42,7 @@ userSchema.pre('save', function(next) {
        console.log(fields[i] + " field is NOT null => " + field);
      }
   }
-  console.log("After the loop");  
+  console.log("After the loop"); */ 
   next();
 });
 userSchema.plugin(plm);
