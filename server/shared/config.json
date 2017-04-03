@@ -1,0 +1,38 @@
+{
+    "STATIC_DIR" : "../client/src",
+    "VIEWS_DIR" : "../client/src/home/",
+    "ORIGIN" : "http://localhost:",
+    "ALLOWED_METHODS": "GET, POST, OPTIONS, PUT, PATCH, DELETE",
+    "ALLOWED_HEADERS" : "X-Requested-With,content-type",
+    "COLLECTION" : "museinvest",
+    "DB_ORIGIN" : "mongodb://",
+    
+    "credits" : {
+        "USR" : "simzam",
+        "PWORD": "7bitsfacebook7",
+        "jwtSecret" : "GREYSTONE"
+    },
+    "ports" : {
+        "SERVER_PORT": "4500",
+        "CLIENT_PORT": "4200",
+        "DB_PORT" : "45299"
+    },
+    "user_defaults" : {
+        "ALIAS": "Guido D'Arezzo",
+        "LOCATION" : "London",
+        "LABEL" : "Epic Records",
+        "CITY" : "Atlanta",
+        "PUBLIC_EMAIL" : "epic@info.com",
+        "OFFICIAL_SITE" : "www.epic.com",
+        "ADDED_ON" : "01/01/1000 CE"
+    },
+    "locale" : {
+        "SA_GMT" : 2
+    },
+    "headers" : {
+        "ACAO" : "Access-Control-Allow-Origin",
+        "ACAM" : "Access-Control-Allow-Methods",
+        "ACAH" : "Access-Control-Allow-Headers",
+        "ACAC" : "Access-Control-Allow-Credentials"
+    }
+}

@@ -1,6 +1,7 @@
 let mongoose	= require('mongoose'),
     Schema 		= mongoose.Schema,
-    plm = require('passport-local-mongoose');
+    plm = require('passport-local-mongoose'),
+	defs = require("../shared/config.json");
 Date.prototype.addHours = function(h){
     this.setHours(this.getHours() + h);
     return this;
@@ -11,38 +12,19 @@ var userSchema = new Schema({
   email         : { type: String, required: true, unique: true, trim: true},
   password      : { type: String, required: true, select: false},
   role          : { type: String, required: true, trim: true},
-  alias         : { type: String, required: false, trim: true},
-  location      : { type: String, required: false},
-  label         : { type: String, required: false, trim: true},
-  city          : { type: String, required: false, trim: true},
-  publicEmail   : { type: String, required: false, trim: true},
-  officialSite  : { type: String, required: false, trim: true},
+  alias         : { type: String, required: false, trim: true, default: defs.user_defaults.ALIAS},
+  location      : { type: String, required: false, default: defs.user_defaults.LOCATION},
+  label         : { type: String, required: false, trim: true, default: defs.user_defaults.LABEL},
+  city          : { type: String, required: false, trim: true, default: defs.user_defaults.CITY},
+  publicEmail   : { type: String, required: false, trim: true, default: defs.user_defaults.PUBLIC_EMAIL},
+  officialSite  : { type: String, required: false, trim: true, default: defs.user_defaults.OFFICIAL_SITE},
   salt          : { type: String, required: true, trim: true, unique: true, select: false},
-  addedOn       : {	type: String, required: false}
+  addedOn       : {	type: String, required: false, default: defs.user_defaults.ADDED_ON}
 });
 userSchema.pre('save', function(next) {
-  if (!this.addedOn) {
-    this.addedOn = (new Date().addHours(2)).toUTCString();
+  if (this.addedOn == defs.user_defaults.ADDED_ON) {
+    this.addedOn = (new Date().addHours(defs.locale.SA_GMT)).toUTCString();
   }
-  this.alias ? true : this.alias = ""; 
-  this.location ? true : this.location = "";
-  this.label ? true : this.label = "";
-  this.city ? true : this.city = "";
-  this.publicEmail ? true : this.publicEmail = "";
-  /*var fields = ["alias", "location", "label", "city", "publicEmail", "officialSite", "salt"];
-  console.log("Before the loop");
-  for (var i = 0; i < fields.length; i++) {
-     var field = userSchema.get(fields[i].toString());
-     if(field == null){
-        userSchema.set(fields[i], "");
-        console.log("Field is null " + fields[i]);
-     }
-     else {
-       userSchema.set(fields[i], "Did not work");
-       console.log(fields[i] + " field is NOT null => " + field);
-     }
-  }
-  console.log("After the loop"); */ 
   next();
 });
 userSchema.plugin(plm);

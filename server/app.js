@@ -6,8 +6,7 @@ let express = require("express"),
     LocalStrategy = require('passport-local').Strategy,
     util = require("util"),
     path = require('path'),
-    creds = require('./creds/config.json'),
-//  favicon = require('serve-favicon'),
+    shared = require('./shared/config.json'),
     logger = require('morgan'),
     index = require('./routes/index'),
     sign = require('./routes/sign'),
@@ -20,25 +19,17 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(logger('dev'));
 app.use(cookies());
-
-// Add headers
 app.use(function (req, res, next) {
-
-    // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:' + creds.config.CLIENT_PORT);
-    // Request methods you wish to allow
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    // Headers we wish to allow
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-    // We are not using sessions so there is no need for allowing control over creds
-    res.setHeader('Access-Control-Allow-Credentials', false);
+    res.setHeader(shared.headers.ACAO, shared.ORIGIN + shared.ports.CLIENT_PORT);
+    res.setHeader(shared.headers.ACAM, shared.ALLOWED_METHODS);
+    res.setHeader(shared.headers.ACAH, shared.ALLOWED_HEADERS);
+    res.setHeader(shared.headers.ACAC, false);
     next();
 });
-
-app.set('views', path.join(__dirname, '../client/src/home/'));
+app.set('views', path.join(__dirname, shared.VIEWS_DIR));
 app.engine('html', require('ejs').renderFile);
-app.set('port', process.env.PORT || creds.config.SERVER_PORT);
-app.set(express.static(path.join(__dirname, '../client/src')));
+app.set('port', process.env.PORT || shared.ports.SERVER_PORT);
+app.set(express.static(path.join(__dirname, shared.STATIC_DIR)));
 app.get('/', index);
 app.post('/signup', sign)
 app.post('/signin', sign);

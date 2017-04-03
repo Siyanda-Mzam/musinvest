@@ -3,13 +3,14 @@
 let express = require("express"),
 	mongo = require('mongodb'),
 	mongoose = require('mongoose'),
-	creds = require('../creds/config.json'),
+	shared = require('../shared/config.json'),
 	User = require('../models/user.js'),
-	db = mongoose.connect('mongodb://' + creds.config.USR + ':' + creds.config.PWORD + '@ds145299.mlab.com:45299/museinvest'),
+	db = mongoose.connect(shared.DB_ORIGIN + shared.credits.USR + ':' + shared.credits.PWORD + '@ds145299.mlab.com:' +
+		shared.ports.DB_PORT + '/' + shared.COLLECTION),
 	router = express.Router(),
 	crypto = require('crypto'),
 	jwt = require('jsonwebtoken'),
-	secret = creds.config.jwtSecret;
+	secret = shared.credits.jwtSecret;
 
 mongoose.Promise = global.Promise;
 db = mongoose.connection;
@@ -20,7 +21,6 @@ db.once('open', function() {
 
 
 router.post('/signup', function(req, res) {
-	console.log("Inside the signup route on server");
 	if (req.body.name && req.body.surname &&
 	req.body.password && req.body.email) {
 		console.log(req.body);
@@ -42,7 +42,6 @@ router.post('/signup', function(req, res) {
 		});
 		newUser.save(function(err) {
 			if (err) {
-				// Redirect the user back to the sign up page if the registration failed
 				console.log("We have found an identical email in the database: " + err.errmsg); 
 				res.status(500);
 			} else {
@@ -62,7 +61,6 @@ router.post('/signup', function(req, res) {
 });
 
 router.post('/signin', function(req, res) {
-	console.log("Inside the signin route of the server");
 	var pwd;
 	let claim;
 	var us = User.findOne({
